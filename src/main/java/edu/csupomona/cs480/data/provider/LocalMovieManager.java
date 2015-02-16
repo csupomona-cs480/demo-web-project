@@ -24,7 +24,7 @@ import edu.csupomona.cs480.util.ResourceResolver;
 public class LocalMovieManager implements MovieManager {
 
     private static final ObjectMapper JSON = new ObjectMapper();
-    
+
     public LocalMovieManager() {
         ScheduledExecutorService scheduler =
                 Executors.newScheduledThreadPool(1);
@@ -41,7 +41,7 @@ public class LocalMovieManager implements MovieManager {
                     System.out.println("title : " + title);
 
                     Set<Movie> titles = new HashSet<Movie>();
-                    
+
                     // get all links
                     boolean isPriceReady  = false;
                     Elements links = doc.select("h2.a-size-medium.s-inline.s-access-title.a-text-normal");
@@ -49,38 +49,39 @@ public class LocalMovieManager implements MovieManager {
                     Elements imgs = doc.select("img");
                     for (Element img : imgs) {
                         if (img.attr("alt").equals("Product Details")) {
-                           
+
                             imgUrls.add(img.absUrl("src"));
                         }
                     }
-                    
+
                     int index = 0;
                     for (Element link : links) {
                         System.out.println("text : " + link.text());
                         Movie m = new Movie();
                         m.setName(link.text());
                         m.setImgUrl(imgUrls.get(index));
-                        titles.add(m);                  
+                        m.setProvider("Amazon Instance Video");
+                        titles.add(m);
                         index++;
                     }
-                    
+
                     // save to the file
-                    JSON.writeValue(ResourceResolver.getMovieFile(), 
+                    JSON.writeValue(ResourceResolver.getMovieFile(),
                             titles);
-                    
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
             }}, 0, 10, TimeUnit.SECONDS);
     }
-    
+
     @Override
     public List<Movie> searchMovies(String keyword) {
         // load the movies from the file
         Set<Movie> movies = new HashSet<Movie>();
         try {
-            movies = JSON.readValue(ResourceResolver.getMovieFile(), 
+            movies = JSON.readValue(ResourceResolver.getMovieFile(),
                     new TypeReference<Set<Movie>>() {});
             System.out.println(movies);
         } catch (IOException e) {
@@ -95,8 +96,8 @@ public class LocalMovieManager implements MovieManager {
                 res.add(m);
             }
         }
-        
+
         return res;
-    }    
+    }
 
 }

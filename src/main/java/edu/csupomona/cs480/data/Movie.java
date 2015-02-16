@@ -4,7 +4,8 @@ public class Movie {
 
     private String name;
     private String imgUrl;
-    
+    private String provider;
+
     public String getName() {
         return name;
     }
@@ -20,5 +21,13 @@ public class Movie {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
-    
+
+	public String getProvider() {
+		return provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+
 }
