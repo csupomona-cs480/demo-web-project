@@ -23,4 +23,12 @@ public class ResourceResolver {
         }
         return file;
     }
+    
+    public static File getMovieFile() {
+        File file = new File(BASE_DIR + "/" + "movie-list.json");
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+        }
+        return file;
+    }
 }
