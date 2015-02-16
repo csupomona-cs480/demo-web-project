@@ -2,9 +2,9 @@ package edu.csupomona.cs480.data.provider;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -61,6 +61,10 @@ public class LocalMovieManager implements MovieManager {
                         m.setName(link.text());
                         m.setImgUrl(imgUrls.get(index));
                         m.setProvider("Amazon Instance Video");
+                        // set the price
+                        Random randomGenerator = new Random();
+                        m.setPrice(randomGenerator.nextInt(10) + 1);
+
                         titles.add(m);
                         index++;
                     }

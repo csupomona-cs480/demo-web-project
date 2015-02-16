@@ -19,6 +19,7 @@
                     <td>Name</td>
                     <td>Image</td>
                     <td>Provider</td>
+                    <td>Price</td>
 
                 </tr>
                 <#list movies as m>
@@ -27,6 +28,7 @@
                             <td>${m.name}</td>
                             <td><img src="${m.imgUrl}"></img></td>
 							<td>${m.provider}</td>
+							<td>$ ${m.price}</td>
 
                         </tr>
                 </#list>
