@@ -40,18 +40,18 @@ public class FSUserManager implements UserManager {
 	private UserMap getUserMap() {
 		UserMap userMap = null;
 		File userFile = ResourceResolver.getUserFile();
-        if (userFile.exists()) {
-        	// read the file and convert the JSON content
-        	// to the UserMap object
-            try {
+		if (userFile.exists()) {
+			// read the file and convert the JSON content
+			// to the UserMap object
+			try {
 				userMap = JSON.readValue(userFile, UserMap.class);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-        } else {
-        	userMap = new UserMap();
-        }
-        return userMap;
+		} else {
+			userMap = new UserMap();
+		}
+		return userMap;
 	}
 
 	/**
@@ -62,16 +62,16 @@ public class FSUserManager implements UserManager {
 	private void persistUserMap(UserMap userMap) {
 		try {
 			// convert the user object to JSON format
-            JSON.writeValue(ResourceResolver.getUserFile(), userMap);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+			JSON.writeValue(ResourceResolver.getUserFile(), userMap);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public User getUser(String userId) {
 		UserMap userMap = getUserMap();
-        return userMap.get(userId);
+		return userMap.get(userId);
 	}
 
 	@Override
