@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.Movie;
 import edu.csupomona.cs480.data.User;
-import edu.csupomona.cs480.data.provider.LocalMovieManager;
-import edu.csupomona.cs480.data.provider.MovieManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
@@ -40,7 +37,6 @@ public class WebController {
     @Autowired
     private UserManager userManager;
 
-    private MovieManager movieMananger = new LocalMovieManager();
     /**
      * This is a simple example of how the HTTP API works.
      * It returns a String "OK" in the HTTP response.
@@ -53,7 +49,6 @@ public class WebController {
     	// You can replace this with other string,
     	// and run the application locally to check your changes
     	// with the URL: http://localhost:8080/
-        System.out.println("Health check: OK");
         return "OK";
     }
 
@@ -71,16 +66,6 @@ public class WebController {
     User getUser(@PathVariable("userId") String userId) {
     	User user = userManager.getUser(userId);
         return user;
-    }
-    
-    @RequestMapping(value = "/movie/search/{keyword}", method = RequestMethod.GET)
-    ModelAndView searchMovies(@PathVariable("keyword") String keyword) {
-        List<Movie> res = movieMananger.searchMovies(keyword);
-        System.out.println(res  + " " + res.size());
-        ModelAndView modelAndView = new ModelAndView("movie");
-        modelAndView.addObject("movies", res);
-        System.out.println("Search keyword " + keyword);
-        return modelAndView;
     }
 
     /**
