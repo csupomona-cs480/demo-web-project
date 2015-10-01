@@ -1,3 +1,4 @@
+// This is the version used for regular HTML + FreeMarker with jQuery
 
 function healthCheck() {
 	$.ajax(
