@@ -49,7 +49,12 @@ public class WebController {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK";
+		return "<h1><i>OK</i></h1>";
+	}
+	
+	@RequestMapping(value = "/s", method = RequestMethod.GET)
+	String sPage() {
+		return "<h1>This is the /s/ page</h1>";
 	}
 
 	@RequestMapping(value = "/cs480/voltaire", method = RequestMethod.GET)
