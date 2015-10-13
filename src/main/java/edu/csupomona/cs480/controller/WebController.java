@@ -64,6 +64,11 @@ public class WebController {
 		// with the URL: http://localhost:8080/cs480/voltaire
 		return "Praise the Sun!";
 	}
+	
+	@RequestMapping(value = "/cs480/adding", method = RequestMethod.GET)
+	int methodCheckAdding() {
+		return 2 + 2 + 45;
+	}
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
