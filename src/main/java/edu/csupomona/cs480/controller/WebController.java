@@ -54,7 +54,7 @@ public class WebController {
 	
 	@RequestMapping(value = "cs480/test", method = RequestMethod.GET)
 	String testing() {
-		return "This is a test page. For testing.";
+		return "This program takes all your personal info and broadcast it into the world wide web";
 	}
 
 	/**
