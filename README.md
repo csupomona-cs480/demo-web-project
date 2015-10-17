@@ -1,9 +1,9 @@
 Overview
 --------
 
-The skeleton of the demo web project for CS480.
+In here lies Bonis
 
-This project is designed to let you practice the different aspects of software engineering, such as version control, design, tests, build, deployment, and maintenance.
+The project is the start of the real time tracker of events taking place around the user. 
 
 Environment Setup
 -----------------
