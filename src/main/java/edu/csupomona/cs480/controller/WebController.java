@@ -1,8 +1,13 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,14 +56,16 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK";
 	}
-
-	@RequestMapping(value = "/cs480/voltaire", method = RequestMethod.GET)
-	String methodCheck() {
-		// You can replace this with other string,
-		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/cs480/voltaire
-		return "Praise the Sun!";
-	}
+	@RequestMapping(value = "/cs480/games", method = RequestMethod.GET)
+	String methodCheck() throws IOException {
+	       Document doc = Jsoup.connect("http://store.steampowered.com/search/#sort_by=_ASC&category1=998&page=1&tags=-1").get();
+	       String title = doc.title();
+	       Elements t = doc.select("span[class=title]");
+	       System.out.println(t);
+	       System.out.println("Title : " + title);
+	       return t.toString();
+	 }
+    
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
