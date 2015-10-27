@@ -54,8 +54,14 @@ public class WebController {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK";
+		return "<h1><i>OK</i></h1>";
 	}
+	
+	@RequestMapping(value = "/s", method = RequestMethod.GET)
+	String sPage() {
+		return "<h1>This is the /s/ page</h1>";
+	}
+<<<<<<< HEAD
 	@RequestMapping(value = "/cs480/games", method = RequestMethod.GET)
 	String methodCheck() throws IOException {
 	       Document doc = Jsoup.connect("http://store.steampowered.com/search/#sort_by=_ASC&category1=998&page=1&tags=-1").get();
@@ -66,6 +72,21 @@ public class WebController {
 	       return t.toString();
 	 }
     
+=======
+
+	@RequestMapping(value = "/cs480/voltaire", method = RequestMethod.GET)
+	String methodCheck() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/cs480/voltaire
+		return "Praise the Sun!";
+	}
+	
+	@RequestMapping(value = "/cs480/adding", method = RequestMethod.GET)
+	int methodCheckAdding() {
+		return 2 + 2 + 45;
+	}
+>>>>>>> origin/master
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
