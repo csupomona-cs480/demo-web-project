@@ -1,34 +1,31 @@
 Overview
 --------
 
-The skeleton of the demo web project for CS480.
+In here lies Bonis
 
-This project is designed to let you practice the different aspects of software engineering, such as version control, design, tests, build, deployment, and maintenance.
+The project is the start of the real time tracker of events taking place around the user. 
 
 Environment Setup
 -----------------
 
-1. Install the latests Maven (http://maven.apache.org/download.cgi)
-2. Install the Eclipse 4+ (http://www.eclipse.org/)
-3. Install the Maven Eclipse Plug-in using the update site (http://www.eclipse.org/m2e/download/)
+1. Install the nodejs
+2. in the directory that contains the .json file type "npm install"
+    This will install all the dependancies.
+YOU MUST INSTALL YOUR OWN MYSQL SERVER AND SET UP THE DATABASE AND CHANGE THE CONNECTION STRING TO WHAT YOU SET UP. 
+OR
+YOU NEED TO LOG ONTO GODADDY AND ADD YOUR SERVER TO THE REMOTE ACCESS LIST UNDER CPANEL AND USE THE CONNECTION STRING ALREADY IN THE FILE. PLEASE DON'T PUSH A NEW FILE WITH YOUR CONNECTION STRING. 
 
-Importing the Project into Eclipse
-----------------------------------
+Here is the website I got this skeleton from ref it while trying to get this project working. 
+http://yifeed.com/passportjs-mysql-expressjs-authentication.html
 
-1. File->Import->Maven->Existing Maven Projects
-2. Select the directory containing the pom.xml file
-3. Finish
-
-Building the Project for the First Time
+Using mocha to run test code
 ---------------------------------------
-1. Right-click on the project root folder->Maven->Update Project
+will get to this after my dental visit. 
 
-Running the Project Locally
+What this app does so far
 ----------------------------------------
-1. Locate the App.java in src/main/java source folder and right-click on it->Run As->Java Application
-2. Verify the running process in your web browser by the following URLs:
-
-- http://localhost:8080/
-- http://localhost:8080/cs480/ping
-- http://localhost:8080/cs480/home
+This skeleton of an authtication for node and MySQL allows people to register for the website and that is pretty much the scope of it.
+It uses passport so intergration of facebook logon and most social media login is pretty easy to do. 
+It needs some improvements but for now we have something that we can test on build from. 
+MeriaDB uses all the same commands as mySQL so it just takes us setting up a meriaDB database and connecting to that. 
 
