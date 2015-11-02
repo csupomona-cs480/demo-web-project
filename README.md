@@ -20,7 +20,10 @@ http://yifeed.com/passportjs-mysql-expressjs-authentication.html
 
 Using mocha to run test code
 ---------------------------------------
-will get to this after my dental visit. 
+will get to this after my dental visit. (It seems my teeth are fine and do not need any work done on them.)
+
+here is a website to get started with mocha testing on a server:
+http://webapplog.com/test-driven-development-in-node-js-with-mocha/
 
 What this app does so far
 ----------------------------------------
