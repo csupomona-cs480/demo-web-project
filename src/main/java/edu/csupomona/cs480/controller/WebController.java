@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
+import edu.csupomona.cs480.data.provider.DBUserManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
@@ -49,7 +50,7 @@ public class WebController {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK";
+		return "OK-in-Class-JENKINS";
 	}
 
 	/**
