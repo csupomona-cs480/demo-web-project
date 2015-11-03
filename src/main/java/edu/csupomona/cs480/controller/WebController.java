@@ -56,6 +56,7 @@ public class WebController {
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
+	 *
 	 * <p>
 	 * Note, when it returns from the Spring, it will be
 	 * automatically converted to JSON format.
