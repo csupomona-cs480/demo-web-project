@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import edu.csupomona.cs480.data.provider.DefaultGPSPriceProvider;
 import edu.csupomona.cs480.data.provider.FSUserManager;
+import edu.csupomona.cs480.data.provider.GPSPriceProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 @Configuration
@@ -24,6 +26,12 @@ public class App {
     public UserManager userManager() {
         UserManager userManager = new FSUserManager();
         return userManager;
+    }
+
+    @Bean
+    public GPSPriceProvider gpsPriceProvider() {
+        GPSPriceProvider provider = new DefaultGPSPriceProvider();
+        return provider;
     }
 
     /**
