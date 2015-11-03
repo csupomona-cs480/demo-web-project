@@ -30,14 +30,6 @@ passport.use(new LocalStrategy(function(username, password, done) {
                                                                                  }
                                                                                  });
                                }));
-passport.use(new LocalStrategy({
-                               usernameField: 'email',
-                               passwordField: 'passwd'
-                               },
-                               function(username, password, done) {
-                               // ...
-                               }
-                               ));
 
 passport.serializeUser(function(user, done) {
                        done(null, user.username);
@@ -52,8 +44,13 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(cookieParser());
-app.use(bodyParser());
-app.use(session({secret: 'secret strategic xxzzz code'}));
+app.use(bodyParser.urlencoded({
+                              extended: true
+                              }));
+app.use(session({secret: 'secret strategic xxzzz code',
+                
+                resave: true,
+                saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 // GET
