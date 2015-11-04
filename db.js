@@ -1,10 +1,10 @@
 var Bookshelf = require('bookshelf');
 
 var config = {
-host: '107.180.50.210',  // your host
-user: 'Testers', // your database user
-password: 'Theend2', // your database password
-database: 'BonisTest',
+host: 'localhost',  // your host
+user: 'root', // your database user
+password: '', // your database password
+database: 'dbUsers',
 charset: 'UTF8_GENERAL_CI'
 };
 
