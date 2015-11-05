@@ -24,5 +24,8 @@
         "passport-local": "*",
         "mysql": "*",
         "bookshelf": "0.5"
+	 "eslint": "^0.10.0",
+    "istanbul": "^0.3.2",
+    "tape": "^3.0.3"
     }
 }
