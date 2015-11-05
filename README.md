@@ -18,12 +18,11 @@ YOU NEED TO LOG ONTO GODADDY AND ADD YOUR SERVER TO THE REMOTE ACCESS LIST UNDER
 Here is the website I got this skeleton from ref it while trying to get this project working. 
 http://yifeed.com/passportjs-mysql-expressjs-authentication.html
 
-Using mocha to run test code
+Using tape to run test code
 ---------------------------------------
 will get to this after my dental visit. (It seems my teeth are fine and do not need any work done on them.)
 
-here is a website to get started with mocha testing on a server:
-http://webapplog.com/test-driven-development-in-node-js-with-mocha/
+tape seems to run better with jenkins
 
 What this app does so far
 ----------------------------------------
