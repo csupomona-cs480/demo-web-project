@@ -116,9 +116,13 @@ Authenticator.prototype.framework = function(fw) {
  *
  * Examples:
  *
- *     app.use(passport.initialize());
+ *     app.configure(function() {
+ *       app.use(passport.initialize());
+ *     });
  *
- *     app.use(passport.initialize({ userProperty: 'currentUser' }));
+ *     app.configure(function() {
+ *       app.use(passport.initialize({ userProperty: 'currentUser' }));
+ *     });
  *
  * @param {Object} options
  * @return {Function} middleware
@@ -211,10 +215,12 @@ Authenticator.prototype.authorize = function(strategy, options, callback) {
  *
  * Examples:
  *
- *     app.use(connect.cookieParser());
- *     app.use(connect.session({ secret: 'keyboard cat' }));
- *     app.use(passport.initialize());
- *     app.use(passport.session());
+ *     app.configure(function() {
+ *       app.use(connect.cookieParser());
+ *       app.use(connect.session({ secret: 'keyboard cat' }));
+ *       app.use(passport.initialize());
+ *       app.use(passport.session());
+ *     });
  *
  * Options:
  *   - `pauseStream`      Pause the request stream before deserializing the user
