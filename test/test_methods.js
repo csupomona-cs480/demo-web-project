@@ -3,13 +3,14 @@ var request = require('superagent');
 var expect = require('expect.js');
 
 test('Suite one', function(t){
+     t.plan(1);
      
-         it (function(done){
-             request.post('localhost:3000').end(
+         setTimeout (function(){
+             request.post('localhost:8080').end(
                                                 function(res){
                                                 expect(res).to.exist;
                                                 
                                                 done();
                                                 });
-             });
+             }, 10);
          });
