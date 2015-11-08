@@ -9,7 +9,7 @@ var server
 
 test('start test server', function (t) {
      // start a local http-server in the current dir (you can change path if you need to)
-     server = execspawn('http-server ./ -p 54321', {pwd: __dirname})
+     server = execspawn('http-server ./ -p 54321', {cwd: __dirname})
      
      // listen for first output from server
      server.stdout.once('data', function (ch) {
