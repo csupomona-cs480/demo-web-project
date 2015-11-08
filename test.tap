@@ -1,4 +1,3 @@
 The magic happens on port 8080
 TAP version 13
-# summer
-ok 1 should be equal
+# start test server
