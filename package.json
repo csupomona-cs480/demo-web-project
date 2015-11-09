@@ -5,7 +5,7 @@
     "start": "node index",
     "test": "./node_modules/.bin/mocha --recursive -R xunit test/ > test-reports.xml",
     "lint": "eslint server.js",
-    "ci-test": "istanbul cover tape \"test/*-test.js\" > test.tap && istanbul report clover",
+    "ci-test": "istanbul cover _mocha -- -R tap \"test/*-test.js\" > test.tap && istanbul report clover",
     "ci-lint": "eslint -f checkstyle server.js > checkstyle-result.xml"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "supertest": "^1.1.0",
     "istanbul": "^0.3.2",
     "tape": "^3.5.0",
-    "mocha": "~2.3.3"
+    "mocha": "~2.3.3",
+    "mocha-tap-reporter": "~0.1.3"
   }
 }
