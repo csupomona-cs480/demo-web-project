@@ -20,15 +20,16 @@
     "mysql": "^2.7.0",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
-    "istanbul": "^0.3.2",
-    "tape": "^3.0.3",
+    
+    
     "npm-execspawn": "^1.2.1",
     "tape-spawn": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^1.9.0",
     "supertest": "^1.1.0",
+    "istanbul": "^0.3.2",
     "tape": "^3.5.0",
-    "mocha": "~1.14.0"
+    "mocha": "~2.3.3"
   }
 }

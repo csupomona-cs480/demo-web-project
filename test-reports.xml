@@ -1,27 +1,9 @@
-TAP version 13
-# start test server
 The magic happens on port 8080
-[0mGET / [32m200 [0m17.786 ms - 846[0m
+[0mGET / [32m200 [0m22.411 ms - 846[0m
 The magic happens on port 8080
 test 404
-[0mGET /foo/bar [33m404 [0m3.213 ms - 20[0m
-<testsuite name="Mocha Tests" tests="2" failures="0" errors="0" skipped="0" timestamp="Mon, 09 Nov 2015 20:23:44 GMT" time="0.579">
-<testcase classname="loading express" name="responds to /" time="0.052"/>
-<testcase classname="loading express" name="404 everything else" time="0.01"/>
+[0mGET /foo/bar [33m404 [0m3.285 ms - 20[0m
+<testsuite name="Mocha Tests" tests="2" failures="0" errors="0" skipped="0" timestamp="Mon, 09 Nov 2015 20:33:05 GMT" time="0.478">
+<testcase classname="loading express" name="responds to /" time="0.053"/>
+<testcase classname="loading express" name="404 everything else" time="0.011"/>
 </testsuite>
-not ok 1 test exited without ending
-  ---
-    operator: fail
-    at: done (/usr/local/lib/node_modules/mocha/bin/_mocha:406:32)
-  ...
-not ok 2 test exited without ending
-  ---
-    operator: fail
-    at: done (/usr/local/lib/node_modules/mocha/bin/_mocha:406:32)
-  ...
-
-1..2
-# tests 2
-# pass  0
-# fail  2
-
