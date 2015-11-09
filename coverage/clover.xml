@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1447105715287" clover="3.2.0">
-	<project timestamp="1447105715287"  name="All Files" >
+<coverage generated="1447106764588" clover="3.2.0">
+	<project timestamp="1447106764589"  name="All Files" >
 		<metrics statements="80"  coveredstatements="46"  conditionals="16"  coveredconditionals="2"  methods="18"  coveredmethods="4"  elements="114"  coveredelements="52"  complexity="0"  packages="3"  files="4"  classes="4"  loc="243"  ncloc="243" />
 		<package name="Bonis" >
 			<metrics statements="24"  coveredstatements="24"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />

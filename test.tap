@@ -1,5 +1,5 @@
 1..2
-ok 1 loading express responds to /
+ok 1 loading express responds to slash
 test 404
 ok 2 loading express 404 everything else
 # tests 2
