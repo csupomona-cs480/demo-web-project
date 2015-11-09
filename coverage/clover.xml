@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1447103909359" clover="3.2.0">
+	<project timestamp="1447103909359"  name="All Files" >
+		<metrics statements="83"  coveredstatements="49"  conditionals="16"  coveredconditionals="2"  methods="18"  coveredmethods="4"  elements="117"  coveredelements="55"  complexity="0"  packages="3"  files="4"  classes="4"  loc="243"  ncloc="243" />
+		<package name="Bonis" >
+			<metrics statements="27"  coveredstatements="27"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
+			<file name="server.js"  path="/Users/davidmongiello/Desktop/bonis/Bonis/server.js" >
+				<metrics statements="27"  coveredstatements="27"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
+				<line num="5"  count="1"  type="stmt" />
+				<line num="6"  count="2"  type="stmt" />
+				<line num="7"  count="2"  type="stmt" />
+				<line num="8"  count="2"  type="stmt" />
+				<line num="9"  count="2"  type="stmt" />
+				<line num="10"  count="2"  type="stmt" />
+				<line num="11"  count="2"  type="stmt" />
+				<line num="12"  count="2"  type="cond"  truecount="2"  falsecount="0" />
+				<line num="14"  count="2"  type="stmt" />
+				<line num="15"  count="2"  type="stmt" />
+				<line num="16"  count="2"  type="stmt" />
+				<line num="17"  count="2"  type="stmt" />
+				<line num="23"  count="2"  type="stmt" />
+				<line num="28"  count="2"  type="stmt" />
+				<line num="29"  count="2"  type="stmt" />
+				<line num="30"  count="2"  type="stmt" />
+				<line num="33"  count="2"  type="stmt" />
+				<line num="35"  count="2"  type="stmt" />
+				<line num="38"  count="2"  type="stmt" />
+				<line num="43"  count="2"  type="stmt" />
+				<line num="44"  count="2"  type="stmt" />
+				<line num="45"  count="2"  type="stmt" />
+				<line num="48"  count="2"  type="stmt" />
+				<line num="51"  count="2"  type="stmt" />
+				<line num="52"  count="2"  type="stmt" />
+				<line num="54"  count="2"  type="stmt" />
+				<line num="56"  count="2"  type="stmt" />
+			</file>
+		</package>
+		<package name="Bonis.app" >
+			<metrics statements="23"  coveredstatements="10"  conditionals="4"  coveredconditionals="0"  methods="8"  coveredmethods="2" />
+			<file name="routes.js"  path="/Users/davidmongiello/Desktop/bonis/Bonis/app/routes.js" >
+				<metrics statements="23"  coveredstatements="10"  conditionals="4"  coveredconditionals="0"  methods="8"  coveredmethods="2" />
+				<line num="2"  count="1"  type="stmt" />
+				<line num="7"  count="2"  type="stmt" />
+				<line num="8"  count="1"  type="stmt" />
+				<line num="15"  count="2"  type="stmt" />
+				<line num="18"  count="0"  type="stmt" />
+				<line num="22"  count="2"  type="stmt" />
+				<line num="28"  count="0"  type="stmt" />
+				<line num="30"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="31"  count="0"  type="stmt" />
+				<line num="33"  count="0"  type="stmt" />
+				<line num="35"  count="0"  type="stmt" />
+				<line num="42"  count="2"  type="stmt" />
+				<line num="44"  count="0"  type="stmt" />
+				<line num="48"  count="2"  type="stmt" />
+				<line num="59"  count="2"  type="stmt" />
+				<line num="60"  count="0"  type="stmt" />
+				<line num="68"  count="2"  type="stmt" />
+				<line num="69"  count="0"  type="stmt" />
+				<line num="70"  count="0"  type="stmt" />
+				<line num="75"  count="1"  type="stmt" />
+				<line num="78"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="79"  count="0"  type="stmt" />
+				<line num="82"  count="0"  type="stmt" />
+			</file>
+		</package>
+		<package name="Bonis.config" >
+			<metrics statements="33"  coveredstatements="12"  conditionals="10"  coveredconditionals="0"  methods="9"  coveredmethods="1" />
+			<file name="database.js"  path="/Users/davidmongiello/Desktop/bonis/Bonis/config/database.js" >
+				<metrics statements="1"  coveredstatements="1"  conditionals="0"  coveredconditionals="0"  methods="0"  coveredmethods="0" />
+				<line num="2"  count="1"  type="stmt" />
+			</file>
+			<file name="passport.js"  path="/Users/davidmongiello/Desktop/bonis/Bonis/config/passport.js" >
+				<metrics statements="32"  coveredstatements="11"  conditionals="10"  coveredconditionals="0"  methods="9"  coveredmethods="1" />
+				<line num="4"  count="1"  type="stmt" />
+				<line num="7"  count="1"  type="stmt" />
+				<line num="8"  count="1"  type="stmt" />
+				<line num="9"  count="1"  type="stmt" />
+				<line num="10"  count="1"  type="stmt" />
+				<line num="12"  count="1"  type="stmt" />
+				<line num="14"  count="1"  type="stmt" />
+				<line num="23"  count="2"  type="stmt" />
+				<line num="24"  count="0"  type="stmt" />
+				<line num="28"  count="2"  type="stmt" />
+				<line num="29"  count="0"  type="stmt" />
+				<line num="30"  count="0"  type="stmt" />
+				<line num="40"  count="2"  type="stmt" />
+				<line num="51"  count="0"  type="stmt" />
+				<line num="52"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="53"  count="0"  type="stmt" />
+				<line num="54"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="55"  count="0"  type="stmt" />
+				<line num="59"  count="0"  type="stmt" />
+				<line num="64"  count="0"  type="stmt" />
+				<line num="66"  count="0"  type="stmt" />
+				<line num="67"  count="0"  type="stmt" />
+				<line num="69"  count="0"  type="stmt" />
+				<line num="82"  count="2"  type="stmt" />
+				<line num="91"  count="0"  type="stmt" />
+				<line num="92"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="93"  count="0"  type="stmt" />
+				<line num="94"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="95"  count="0"  type="stmt" />
+				<line num="99"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="100"  count="0"  type="stmt" />
+				<line num="103"  count="0"  type="stmt" />
+			</file>
+		</package>
+	</project>
+</coverage>
