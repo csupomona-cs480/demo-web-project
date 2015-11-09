@@ -1,18 +1,14 @@
 1..2
-The magic happens on port 8080
-[0mGET / [32m200 [0m18.466 ms - 846[0m
 ok 1 loading express responds to /
-The magic happens on port 8080
 test 404
-[0mGET /foo/bar [33m404 [0m2.947 ms - 20[0m
 ok 2 loading express 404 everything else
 # tests 2
 # pass 2
 # fail 0
 
 =============================== Coverage summary ===============================
-Statements   : 59.04% ( 49/83 )
+Statements   : 57.5% ( 46/80 )
 Branches     : 12.5% ( 2/16 )
 Functions    : 22.22% ( 4/18 )
-Lines        : 59.04% ( 49/83 )
+Lines        : 57.5% ( 46/80 )
 ================================================================================

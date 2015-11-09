@@ -7,7 +7,7 @@ var express  = require('express');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
+//var morgan = require('morgan');
 var app      = express();
 var port     = process.env.PORT || 8080;
 
@@ -25,7 +25,7 @@ require('./config/passport')(passport); // pass passport for configuration
 
 
 // set up our express application
-app.use(morgan('dev')); // log every request to the console
+//app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({
 	extended: true

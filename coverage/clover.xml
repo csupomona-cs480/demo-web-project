@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1447103909359" clover="3.2.0">
-	<project timestamp="1447103909359"  name="All Files" >
-		<metrics statements="83"  coveredstatements="49"  conditionals="16"  coveredconditionals="2"  methods="18"  coveredmethods="4"  elements="117"  coveredelements="55"  complexity="0"  packages="3"  files="4"  classes="4"  loc="243"  ncloc="243" />
+<coverage generated="1447105715287" clover="3.2.0">
+	<project timestamp="1447105715287"  name="All Files" >
+		<metrics statements="80"  coveredstatements="46"  conditionals="16"  coveredconditionals="2"  methods="18"  coveredmethods="4"  elements="114"  coveredelements="52"  complexity="0"  packages="3"  files="4"  classes="4"  loc="243"  ncloc="243" />
 		<package name="Bonis" >
-			<metrics statements="27"  coveredstatements="27"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
+			<metrics statements="24"  coveredstatements="24"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
 			<file name="server.js"  path="/Users/davidmongiello/Desktop/bonis/Bonis/server.js" >
-				<metrics statements="27"  coveredstatements="27"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
+				<metrics statements="24"  coveredstatements="24"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
 				<line num="5"  count="1"  type="stmt" />
 				<line num="6"  count="2"  type="stmt" />
 				<line num="7"  count="2"  type="stmt" />
 				<line num="8"  count="2"  type="stmt" />
 				<line num="9"  count="2"  type="stmt" />
-				<line num="10"  count="2"  type="stmt" />
 				<line num="11"  count="2"  type="stmt" />
 				<line num="12"  count="2"  type="cond"  truecount="2"  falsecount="0" />
 				<line num="14"  count="2"  type="stmt" />
@@ -19,7 +18,6 @@
 				<line num="16"  count="2"  type="stmt" />
 				<line num="17"  count="2"  type="stmt" />
 				<line num="23"  count="2"  type="stmt" />
-				<line num="28"  count="2"  type="stmt" />
 				<line num="29"  count="2"  type="stmt" />
 				<line num="30"  count="2"  type="stmt" />
 				<line num="33"  count="2"  type="stmt" />
@@ -30,7 +28,6 @@
 				<line num="45"  count="2"  type="stmt" />
 				<line num="48"  count="2"  type="stmt" />
 				<line num="51"  count="2"  type="stmt" />
-				<line num="52"  count="2"  type="stmt" />
 				<line num="54"  count="2"  type="stmt" />
 				<line num="56"  count="2"  type="stmt" />
 			</file>
