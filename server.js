@@ -2,6 +2,7 @@
 
 // set up ======================================================================
 // get all the tools we need
+function makeServer() {
 var express  = require('express');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
@@ -12,6 +13,9 @@ var port     = process.env.PORT || 8080;
 
 var passport = require('passport');
 var flash    = require('connect-flash');
+var server   = require('./server');
+var users = ['John', 'Betty', 'Hal'];
+
 
 // configuration ===============================================================
 // connect to our database
@@ -40,10 +44,14 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-app.listen(port);
+app.server = app.listen(port);
 console.log('The magic happens on port ' + port);
+    
+    return app;
+}
+module.exports = makeServer;
+

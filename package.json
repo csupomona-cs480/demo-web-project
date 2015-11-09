@@ -2,8 +2,8 @@
   "name": "node-authentication",
   "main": "server.js",
   "scripts": {
-    "start": "node ./server.js",
-    "test": "istanbul cover tape \"test/*-test.js\"",
+    "start": "node index",
+    "test": "./node_modules/.bin/mocha --recursive -R xunit test/ > test-reports.xml",
     "lint": "eslint server.js",
     "ci-test": "istanbul cover tape \"test/*-test.js\" > test.tap && istanbul report clover",
     "ci-lint": "eslint -f checkstyle server.js > checkstyle-result.xml"
@@ -26,6 +26,9 @@
     "tape-spawn": "^1.4.0"
   },
   "devDependencies": {
-    "eslint": "^1.9.0"
+    "eslint": "^1.9.0",
+    "supertest": "^1.1.0",
+    "tape": "^3.5.0",
+    "mocha": "~1.14.0"
   }
 }
