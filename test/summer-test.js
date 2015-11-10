@@ -1,20 +1,14 @@
-var test = require('tape');
+
+
 var request = require('supertest');
 //var express = require('express');
 
-var request = require('supertest');
-
-
 require = require('really-need');
-
-
-//var login = require('./login');
-
 
 describe('loading express', function () {
          var server;
          beforeEach(function () {
-                    server = require('../server', { bustCache: true })();
+                    server = require('../server', { bustCache: true })(8081);
                     });
          afterEach(function (done) {
                    server.server.close(done);
