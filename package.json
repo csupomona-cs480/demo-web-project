@@ -4,7 +4,7 @@
   "scripts": {
     "start": "node index",
     "lint": "eslint server.js",
-    "ci-test": "istanbul cover _mocha --reporter mocha-tap-reporter -R tap \"test/*-test.js\" > test.tap && istanbul report clover",
+    "ci-test": "istanbul cover _mocha -- -R tap \"test/*-test.js\" > test.tap && istanbul report clover",
     "ci-lint": "eslint -f checkstyle server.js > checkstyle-result.xml"
   },
   "dependencies": {

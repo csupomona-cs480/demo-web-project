@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1447106764588" clover="3.2.0">
-	<project timestamp="1447106764589"  name="All Files" >
-		<metrics statements="80"  coveredstatements="46"  conditionals="16"  coveredconditionals="2"  methods="18"  coveredmethods="4"  elements="114"  coveredelements="52"  complexity="0"  packages="3"  files="4"  classes="4"  loc="243"  ncloc="243" />
+<coverage generated="1447121798911" clover="3.2.0">
+	<project timestamp="1447121798911"  name="All Files" >
+		<metrics statements="82"  coveredstatements="48"  conditionals="14"  coveredconditionals="0"  methods="18"  coveredmethods="4"  elements="114"  coveredelements="52"  complexity="0"  packages="3"  files="4"  classes="4"  loc="242"  ncloc="242" />
 		<package name="Bonis" >
-			<metrics statements="24"  coveredstatements="24"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
+			<metrics statements="26"  coveredstatements="26"  conditionals="0"  coveredconditionals="0"  methods="1"  coveredmethods="1" />
 			<file name="server.js"  path="/Users/davidmongiello/Desktop/bonis/Bonis/server.js" >
-				<metrics statements="24"  coveredstatements="24"  conditionals="2"  coveredconditionals="2"  methods="1"  coveredmethods="1" />
+				<metrics statements="26"  coveredstatements="26"  conditionals="0"  coveredconditionals="0"  methods="1"  coveredmethods="1" />
 				<line num="5"  count="1"  type="stmt" />
 				<line num="6"  count="2"  type="stmt" />
 				<line num="7"  count="2"  type="stmt" />
 				<line num="8"  count="2"  type="stmt" />
 				<line num="9"  count="2"  type="stmt" />
+				<line num="10"  count="2"  type="stmt" />
 				<line num="11"  count="2"  type="stmt" />
-				<line num="12"  count="2"  type="cond"  truecount="2"  falsecount="0" />
 				<line num="14"  count="2"  type="stmt" />
 				<line num="15"  count="2"  type="stmt" />
 				<line num="16"  count="2"  type="stmt" />
 				<line num="17"  count="2"  type="stmt" />
 				<line num="23"  count="2"  type="stmt" />
+				<line num="27"  count="2"  type="stmt" />
+				<line num="28"  count="2"  type="stmt" />
 				<line num="29"  count="2"  type="stmt" />
-				<line num="30"  count="2"  type="stmt" />
-				<line num="33"  count="2"  type="stmt" />
-				<line num="35"  count="2"  type="stmt" />
-				<line num="38"  count="2"  type="stmt" />
+				<line num="32"  count="2"  type="stmt" />
+				<line num="34"  count="2"  type="stmt" />
+				<line num="37"  count="2"  type="stmt" />
+				<line num="42"  count="2"  type="stmt" />
 				<line num="43"  count="2"  type="stmt" />
 				<line num="44"  count="2"  type="stmt" />
-				<line num="45"  count="2"  type="stmt" />
-				<line num="48"  count="2"  type="stmt" />
+				<line num="47"  count="2"  type="stmt" />
+				<line num="50"  count="2"  type="stmt" />
 				<line num="51"  count="2"  type="stmt" />
-				<line num="54"  count="2"  type="stmt" />
-				<line num="56"  count="2"  type="stmt" />
+				<line num="53"  count="2"  type="stmt" />
+				<line num="55"  count="2"  type="stmt" />
 			</file>
 		</package>
 		<package name="Bonis.app" >

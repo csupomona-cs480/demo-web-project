@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">Bonis/server.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(24 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(26 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(24 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(26 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">Bonis/</a> &#187; server.js</div>
@@ -81,8 +81,7 @@
 54
 55
 56
-57
-58</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+57</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -91,19 +90,13 @@
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,16 +104,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,9 +114,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,14 +141,14 @@
 &nbsp;
 // set up ======================================================================
 // get all the tools we need
-function makeServer() {
+function makeServer(port) {
 var express  = require('express');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var morgan = require('morgan');
+var morgan = require('morgan');
 var app      = express();
-var port     = process.env.PORT || 8080;
+//var port     = process.env.PORT || 8080;
 &nbsp;
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -164,9 +162,8 @@ var users = ['John', 'Betty', 'Hal'];
 require('./config/passport')(passport); // pass passport for configuration
 &nbsp;
 &nbsp;
-&nbsp;
 // set up our express application
-//app.use(morgan('dev')); // log every request to the console
+app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -190,7 +187,7 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 &nbsp;
 // launch ======================================================================
 app.server = app.listen(port);
-//console.log('The magic happens on port ' + port);
+console.log('The magic happens on port ' + port);
     
     return app;
 }
@@ -201,7 +198,7 @@ module.exports = makeServer;
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 09 2015 14:06:00 GMT-0800 (PST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 09 2015 18:16:35 GMT-0800 (PST)</div>
 </div>
 <script src="../prettify.js"></script>
 <script>

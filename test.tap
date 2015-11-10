@@ -1,0 +1,18 @@
+1..2
+The magic happens on port 8081
+[0mGET / [32m200 [0m18.509 ms - 846[0m
+ok 1 loading express responds to slash
+The magic happens on port 8081
+test 404
+[0mGET /foo/bar [33m404 [0m3.017 ms - 20[0m
+ok 2 loading express 404 everything else
+# tests 2
+# pass 2
+# fail 0
+
+=============================== Coverage summary ===============================
+Statements   : 58.54% ( 48/82 )
+Branches     : 0% ( 0/14 )
+Functions    : 22.22% ( 4/18 )
+Lines        : 58.54% ( 48/82 )
+================================================================================
