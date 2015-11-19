@@ -16,7 +16,7 @@ OR
 YOU NEED TO LOG ONTO GODADDY AND ADD YOUR SERVER TO THE REMOTE ACCESS LIST UNDER CPANEL AND USE THE CONNECTION STRING ALREADY IN THE FILE. PLEASE DON'T PUSH A NEW FILE WITH YOUR CONNECTION STRING. 
 
 Here is the website I got this skeleton from ref it while trying to get this project working. 
-http://yifeed.com/passportjs-mysql-expressjs-authentication.html
+https://scotch.io/tutorials/easy-node-authentication-setup-and-local
 
 Using tape to run test code
 ---------------------------------------
