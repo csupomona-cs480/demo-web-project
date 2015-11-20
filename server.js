@@ -48,9 +48,12 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 // launch ======================================================================
 app.server = app.listen(port);
-console.log('The magic happens on port ' + port);
+printPort(port);
     
     return app;
 }
 module.exports = makeServer;
 
+function printPort(port){
+    console.log('The magic happens on port ' + port);
+}
