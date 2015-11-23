@@ -62,6 +62,18 @@ module.exports = function(app, passport) {
 		});
 	});
 
+    // =====================================
+    // EVENTS SECTION ======================
+    // =====================================
+    // show the list of nearby events
+    // protected because I said so
+    // also maybe for location or something
+    app.get('/events', isLoggedIn, function(req, res) {
+        res.render('events.ejs', {
+            user : req.user
+        });
+    });
+
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
