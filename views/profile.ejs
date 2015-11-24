@@ -2,39 +2,74 @@
 <!doctype html>
 <html>
 <head>
-	<title>Node Authentication</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
-	</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--The above 3 meta tags *must* come first in the head; any other
+        head content must come *after* these tags -->
+
+    <title>Bonis</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
-<div class="container">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar" style="background-color: #888;"></span>
+                    <span class="icon-bar" style="background-color: #888;"></span>
+                    <span class="icon-bar" style="background-color: #888;"></span>
+                </button>
+                <a class="navbar-brand href="/index" style="color:#333;">Bonis</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/profile">Profile</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li role="separator" class="divider"></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/logout"><span class="fa"></span> Log Out</a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
 
-	<div class="page-header text-center">
-		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
-	</div>
+    <div class="container">
+        <div class="row">
+            <!-- LOCAL INFORMATION -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3><span class="fa fa-user"></span> Local</h3>
+                    <p>
+                        <strong>id</strong>: <%= user.id %><br>
+                        <strong>username</strong>: <%= user.username %><br>
+                        <!-- <strong>password</strong>: <%= user.password %> -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="row">
-
-		<!-- LOCAL INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3><span class="fa fa-user"></span> Local</h3>
-
-					<p>
-						<strong>id</strong>: <%= user.id %><br>
-						<strong>username</strong>: <%= user.username %><br>
-						<strong>password</strong>: <%= user.password %>
-					</p>
-
-			</div>
-		</div>
-
-	</div>
-
-</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../node_modules/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
