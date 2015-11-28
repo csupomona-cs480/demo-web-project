@@ -74,6 +74,15 @@ module.exports = function(app, passport) {
         });
     });
 
+    // =====================================
+    // CREATE EVENT SECTION ================
+    // =====================================
+    app.get('/create', isLoggedIn, function(req, res) {
+        res.render('create.ejs', {
+            user : req.user
+        });
+    });
+
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
