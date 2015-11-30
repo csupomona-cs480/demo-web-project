@@ -1,0 +1,21 @@
+{
+  "db": {
+    "host": "bonisusers.cuxilwg0ru3n.us-west-2.rds.amazonaws.com",
+    "port": 3306,
+    "database": "my_schema",
+    "password": "ThePass2",
+    "name": "db",
+    "connector": "mysql",
+    "user": "AwesomeTeam",
+    "createDatabase": true
+  },
+  "newDatasource": {
+    "host": "bonisusers.cuxilwg0ru3n.us-west-2.rds.amazonaws.com",
+    "port": 3306,
+    "database": "my_schema",
+    "password": "ThePass2",
+    "name": "newDatasource",
+    "connector": "mysql",
+    "user": "AwesomeTeam"
+  }
+}

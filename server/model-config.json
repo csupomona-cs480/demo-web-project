@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "sources": [
+      "../common/models",
+      "./models",
+      "./node_modules/loopback-component-passport/lib/models"
+    ]
+  },
+  "user": {
+    "dataSource": "newDatasource",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "accessToken": {
+    "dataSource": "newDatasource",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "userCredential": {
+    "dataSource": "newDatasource",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "userIdentity": {
+    "dataSource": "newDatasource",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Events": {
+    "dataSource": "newDatasource",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  }
+}
