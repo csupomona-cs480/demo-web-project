@@ -2,16 +2,11 @@ extends ../layouts/layout
 
 block content
   .jumbotron
-    h1 Welcome to Bonis!
-    p
-      a.btn.btn-lg.btn-primary(href='http://docs.strongloop.com/display/public/LB/LoopBack#getting-started', role='button') View LoopBack docs »
-
-  .row
-    .col-md-12
-      h1 Sample Functionality
-      p.lead In this sample application you can:
-      ul
-        li
-          a(href='/signup') Signup for a local account
-        li
-          a(href='/login') Login to your account using either a local account or social accounts
+    h1
+      span.fa
+      | Welcome to Bonis!
+    p 
+      | Bonis is a web app for finding the best parties and group events nearest you. By
+      | signing up with your Facebook profile, you can see all the current events and their reviews.
+    p 
+      a.btn.btn-lg.btn-warning(href='/events', role='button') View Local Events »

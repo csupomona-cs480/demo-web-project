@@ -93,6 +93,20 @@ app.get('/auth/account', ensureLoggedIn('/login'), function (req, res, next) {
   });
 });
 
+app.get('/events', ensureLoggedIn('/login'), function (req, res, next) {
+  res.render('pages/events', {
+    user: req.user,
+    url: req.url
+  });
+});
+
+app.get('/create', ensureLoggedIn('/login'), function (req, res, next) {
+  res.render('pages/create', {
+    user: req.user,
+    url: req.url
+  });
+});
+
 app.get('/link/account', ensureLoggedIn('/login'), function (req, res, next) {
   res.render('pages/linkedAccounts', {
     user: req.user,

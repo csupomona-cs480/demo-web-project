@@ -1,0 +1,45 @@
+extends ../layouts/layout
+
+block content
+  .jumbotron
+    h1 Create Event
+	form(action='', method='post')
+          // Grab Date from today's date
+          // Time range, address, age range, alcohol?
+          div
+            p
+              | Event Name
+              input.form-control(type='text', name='eventname')
+          div
+            p
+              | Time
+              input.form-control(type='text', name='time')
+          div
+            p
+              | Address 1
+              input.form-control(type='text', name='address1')
+          div
+            p
+              | Address 2
+              input.form-control(type='text', name='address2')
+          div
+            p
+              | City
+              input.form-control(type='text', name='city')
+          div
+            p
+              | State
+              input.form-control(type='text', name='state')
+          div
+            p
+              | Zipcode
+              input.form-control(type='text', name='zip')
+          div
+            p
+              | Age Range
+              input.form-control(type='text', name='age')
+          .form-group
+            p
+              | Alcohol Allowed?
+              input.form-control(type='checkbox', name='Alcohol', value='yes')
+            p
