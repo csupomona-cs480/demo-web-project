@@ -107,6 +107,14 @@ app.get('/create', ensureLoggedIn('/login'), function (req, res, next) {
   });
 });
 
+app.get('/map', ensureLoggedIn('/login'), function (req, res, next) {
+        res.render('pages/map', {
+                   user: req.user,
+                   url: req.url
+                   });
+        });
+
+
 app.get('/link/account', ensureLoggedIn('/login'), function (req, res, next) {
   res.render('pages/linkedAccounts', {
     user: req.user,
@@ -182,6 +190,7 @@ app.get('/auth/logout', function (req, res, next) {
 // Example:
 var path = require('path');
 app.use(loopback.static(path.resolve(__dirname, '../client/public')));
+
 
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error

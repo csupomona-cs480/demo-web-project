@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Marker animations with google
+    style.
+      html, body, #map-canvas {
+      height: 100%;
+      margin: 0px;
+      padding: 0px
+      }
+      #panel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      }
+    
+    script(src="https://maps.googleapis.com/maps/api/js?v=3.exp")
+    script. 
+      // if HTML DOM Element that contains the map is found...
+      if (document.getElementById('map-canvas')){
+ 
+      // Coordinates to center the map
+      var myLatlng = new google.maps.LatLng(52.525595,13.393085);
+ 
+      // Other options for the map, pretty much selfexplanatory
+      var mapOptions = {
+      zoom: 14,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+ 
+      // Attach a map to the DOM Element, with the defined settings
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+      }
+      navigator.geolocation
+      navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+      };
+
+      }
+      var berlin = new google.maps.LatLng(pos.lat, pos.lng);
+      
+      var markers = [];
+      var iterator = 0;
+      var map;
+      function initialize() {
+      var mapOptions = {
+      zoom: 12,
+      center: berlin
+      };
+      map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+      }
+      function drop() {
+      for (var i = 0; i < neighborhoods.length; i++) {
+      setTimeout(function() {
+      addMarker();
+      }, i * 200);
+      }
+      }
+      function addMarker() {
+      markers.push(new google.maps.Marker({
+      position: neighborhoods[iterator],
+      map: map,
+      draggable: false,
+      animation: google.maps.Animation.DROP
+      }));
+      iterator++;
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+  body
+    #panel(style="margin-left: -52px")
+      button#drop(onclick="drop()") Drop Markers
+    #map-canvas

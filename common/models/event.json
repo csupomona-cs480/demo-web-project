@@ -1,0 +1,69 @@
+{
+  "name": "Event",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "length": 20,
+      "oracle": {
+        "columnName": "ID",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "nullable": "N"
+      }
+    },
+    "street": {
+      "type": "String",
+      "length": 64,
+      "oracle": {
+        "columnName": "STREET",
+        "dataType": "VARCHAR2",
+        "dataLength": 64,
+        "nullable": "Y"
+      }
+    },
+    "city": {
+      "type": "String",
+      "length": 64,
+      "oracle": {
+        "columnName": "CITY",
+        "dataType": "VARCHAR2",
+        "dataLength": 64,
+        "nullable": "Y"
+      }
+    },
+    "zipcode": {
+      "type": "Number",
+      "length": 20,
+      "oracle": {
+        "columnName": "ZIPCODE",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "nullable": "Y"
+      }
+    },
+    "name": {
+      "type": "String",
+      "length": 32,
+      "oracle": {
+        "columnName": "NAME",
+        "dataType": "VARCHAR2",
+        "dataLength": 32,
+        "nullable": "Y"
+      }
+    },
+    "geo": {
+      "type": "GeoPoint"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

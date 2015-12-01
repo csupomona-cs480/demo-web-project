@@ -42,7 +42,7 @@
     "dataSource": "db",
     "public": false
   },
-  "Events": {
+  "Event": {
     "dataSource": "newDatasource",
     "public": true,
     "$promise": {},
