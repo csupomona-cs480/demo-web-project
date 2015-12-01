@@ -46,8 +46,13 @@ html
       lng: position.coords.longitude
       };
 
-      }
-      var berlin = new google.maps.LatLng(pos.lat, pos.lng);
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+      }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+       });
+      var calPoly = new google.maps.LatLng(34.0473120, -117.8155420);
       
       var markers = [];
       var iterator = 0;
@@ -55,7 +60,7 @@ html
       function initialize() {
       var mapOptions = {
       zoom: 12,
-      center: berlin
+      center: calPoly
       };
       map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -79,5 +84,5 @@ html
       google.maps.event.addDomListener(window, 'load', initialize);
   body
     #panel(style="margin-left: -52px")
-      button#drop(onclick="drop()") Drop Markers
+      
     #map-canvas
