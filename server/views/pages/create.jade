@@ -3,9 +3,7 @@ extends ../layouts/layout
 block content
   .jumbotron
     h1 Create Event
-	form(action='', method='post')
-          // Grab Date from today's date
-          // Time range, address, age range, alcohol?
+    form(action='', method='post')
           div
             p
               | Event Name
@@ -13,7 +11,8 @@ block content
           div
             p
               | Time
-              input.form-control(type='text', name='time')
+              input.form-control(type="time", name='startTime')
+              input.form-control(type="time", name='endTime')
           div
             p
               | Address 1
@@ -42,4 +41,6 @@ block content
             p
               | Alcohol Allowed?
               input.form-control(type='checkbox', name='Alcohol', value='yes')
+          div
             p
+              a.btn.btn-lg.btn-warning(role="button", href="#") Submit >>

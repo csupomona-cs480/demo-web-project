@@ -20,6 +20,9 @@
       "paths": [
         "${restApiRoot}"
       ]
+    },
+    "loopback#static": {
+        "params": "$!../client"
     }
   },
   "files": {},
