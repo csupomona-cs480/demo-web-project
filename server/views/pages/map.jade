@@ -2,86 +2,80 @@ doctype html
 html
   head
     meta(charset="utf-8")
-    title Marker animations with google
+    title Bonis!
     style.
-      html, body, #map-canvas {
-      height: 100%;
-      margin: 0px;
-      padding: 0px
+      html, body {
+          height: 100%;
+          margin: 0px;
+          padding: 0px
       }
-      #panel {
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      margin-left: -180px;
-      z-index: 5;
-      background-color: #fff;
-      padding: 5px;
-      border: 1px solid #999;
+      #map-canvas {
+          height: 100%;
       }
-    
+
+  body
+    #map-canvas
+
     script(src='https://maps.googleapis.com/maps/api/js?v=3.exp').
     script.
-      // if HTML DOM Element that contains the map is found...
-      if (document.getElementById('map-canvas')){
-     
-          // Coordinates to center the map
-          var myLatlng = new google.maps.LatLng(52.525595,13.393085);
-     
-          // Other options for the map, pretty much selfexplanatory
-          var mapOptions = {
-          zoom: 14,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
- 
-          // Attach a map to the DOM Element, with the defined settings
-          var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-      }
-    
-      navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-          };
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
-          map.setCenter(pos);
-      }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
-      });
-      var calPoly = new google.maps.LatLng(34.0473120, -117.8155420);
-      
       var markers = [];
+      var events = [new google.maps.LatLng(34, -117.8)];
       var iterator = 0;
       var map;
-      function initialize() {
-          var mapOptions = {
-              zoom: 12,
-              center: calPoly
-          };
-          map = new google.maps.Map(document.getElementById('map-canvas'),
-          mapOptions);
+
+      function initMap() {
+          // Default location == CPP
+          map = new google.maps.Map(document.getElementById('map-canvas'), {
+              center: {lat: 34.0473120, lng: -117.8155420},
+              zoom: 12
+          });
+          var infoWindow = new google.maps.InfoWindow({map: map});
+
+          // Attempt the forbidden art of html5 geolocation
+          if ( navigator.geolocation ) {
+              navigator.geolocation.getCurrentPosition( function( position ) {
+                  var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                  };
+
+                  infoWindow.setPosition( pos );
+                  infoWindow.setContent( 'You' );
+                  map.setCenter( pos );
+              }, function() {
+                  handleLocationError(true, infoWindow, map.getCenter());
+              });
+          } else {
+              // Browser does not support Geoloc
+              handleLocationError(false, infoWindow, map.getCenter());
+          }
+
+          drop();
       }
+
+      function handleLocationError(hasGeolocation, infoWindow, pos) {
+          infoWindow.setPosition(pos);
+          infoWIndow.setContent(hasGeolocation ?
+                                'Error: Geolocation service failed.' :
+                                'Error: This browser does not support geolocation.');
+      }
+
       function drop() {
-          for (var i = 0; i < neighborhoods.length; i++) {
+          for (var i = 0; i < events.length; i++) {
               setTimeout(function() {
-                  addMarker();
+                  addMarkers();
               }, i * 200);
           }
       }
-      function addMarker() {
+
+      function addMarkers() {
           markers.push( new google.maps.Marker( {
-              position: neighborhoods[iterator],
+              position: events[iterator],
               map: map,
               draggable: false,
               animation: google.maps.Animation.DROP
           }));
           iterator++;
       }
-      google.maps.event.addDomListener(window, 'load', initialize);
-  body
-    #panel(style="margin-left: -52px")
-      
-    #map-canvas
+
+      google.maps.event.addDomListener(window, 'load', initMap);
