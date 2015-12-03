@@ -5,7 +5,7 @@
   "options": {
     "validateUpsert": true,
     "mysql": {
-          "table": "Event"
+      "table": "Event"
     }
   },
   "properties": {
@@ -43,7 +43,7 @@
     "geo": {
       "type": "GeoPoint"
     },
-    "address1": {
+    "street": {
       "type": "String",
       "length": 64,
       "oracle": {
