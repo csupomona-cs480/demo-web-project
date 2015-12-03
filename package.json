@@ -36,5 +36,8 @@
     "type": "git",
     "url": "git://github.com/strongloop-community/loopback-example-passport.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-loopback-auto": "0.0.5"
+  }
 }

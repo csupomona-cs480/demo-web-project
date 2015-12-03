@@ -31,15 +31,15 @@
     "$resolved": true
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "newDatasource",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "newDatasource",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "newDatasource",
     "public": false
   },
   "Event": {

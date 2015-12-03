@@ -14,7 +14,6 @@ var passportConfigurator = new PassportConfigurator(app);
  *
  */
 var bodyParser = require('body-parser');
-
 /**
  * Flash messages for passport
  *
@@ -164,6 +163,34 @@ app.post('/signup', function (req, res, next) {
     }
   });
 });
+//app.model('Event', {dataSource: 'newDatasource'});
+//
+//app.post('/api/event', ensureLoggedIn('/login'), function (req, res, next) {
+//         
+//         var event = app.models.Event;
+//         
+//         var newEvent = {};
+//         newEvent.name = req.body.name;
+//         newEvent.address1 = req.body.address1;
+//         newEvent.address2 = req.body.address2;
+//         newEvent.startTime = req.body.startTime;
+//         newEvent.endTime = req.body.endTime;
+//         newEvent.ageRange = req.body.ageRange;
+//         newEvent.city = req.body.city;
+//         newEvent.zip = "91723";
+//         newEvent.alcohol = req.body.alcohol;
+//         console.log(newEvent);
+//         
+//         event.create(newEvent, function (err, Event) {
+//                     if (err) {
+//                     req.flash('error', err.message);
+//                     return res.redirect('back');
+//                     } else {}
+//         
+//                      });
+//         
+//         });
+
 
 app.get('/login', function (req, res, next){
   res.render('pages/login', {
@@ -183,7 +210,17 @@ app.get('/auth/logout', function (req, res, next) {
   req.logout();
   res.redirect('/');
 });
-
+//app.use('/explorer', loopback.basicAuth('user', 'password'));
+//explorer(app, {
+//         basePath: '/api',
+//         uiDirs: [
+//                  path.resolve(__dirname, 'public'),
+//                  path.resolve(__dirname, 'node_modules', 'swagger-ui')
+//                  ]
+//         
+//         
+//         });
+app.use('/api', loopback.rest());
 // -- Mount static files here--
 // All static middleware should be registered at the end, as all requests
 // passing the static middleware are hitting the file system

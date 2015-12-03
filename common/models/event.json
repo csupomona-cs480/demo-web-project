@@ -1,14 +1,16 @@
 {
   "name": "Event",
   "base": "PersistedModel",
-  "strict": false,
   "idInjection": false,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "mysql": {
+          "table": "Event"
+    }
   },
   "properties": {
     "id": {
-      "type": "String",
+      "type": "Number",
       "id": true,
       "length": 20,
       "oracle": {
@@ -18,16 +20,6 @@
         "nullable": "N"
       }
     },
-    "street": {
-      "type": "String",
-      "length": 64,
-      "oracle": {
-        "columnName": "STREET",
-        "dataType": "VARCHAR2",
-        "dataLength": 64,
-        "nullable": "Y"
-      }
-    },
     "city": {
       "type": "String",
       "length": 64,
@@ -35,16 +27,6 @@
         "columnName": "CITY",
         "dataType": "VARCHAR2",
         "dataLength": 64,
-        "nullable": "Y"
-      }
-    },
-    "zipcode": {
-      "type": "Number",
-      "length": 20,
-      "oracle": {
-        "columnName": "ZIPCODE",
-        "dataType": "VARCHAR2",
-        "dataLength": 20,
         "nullable": "Y"
       }
     },
@@ -60,6 +42,41 @@
     },
     "geo": {
       "type": "GeoPoint"
+    },
+    "address1": {
+      "type": "String",
+      "length": 64,
+      "oracle": {
+        "columnName": "STREET",
+        "dataType": "VARCHAR2",
+        "dataLength": 64,
+        "nullable": "Y"
+      }
+    },
+    "address2": {
+      "type": "string"
+    },
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    },
+    "ageRange": {
+      "type": "string"
+    },
+    "alcohol": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "Number",
+      "length": 20,
+      "oracle": {
+        "columnName": "ZIPCODE",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "nullable": "Y"
+      }
     }
   },
   "validations": [],

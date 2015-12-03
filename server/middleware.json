@@ -22,7 +22,7 @@
       ]
     },
     "loopback#static": {
-        "params": "$!../client"
+      "params": "$!../client"
     }
   },
   "files": {},

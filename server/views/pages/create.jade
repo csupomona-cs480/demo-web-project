@@ -3,11 +3,11 @@ extends ../layouts/layout
 block content
   .jumbotron
     h1 Create Event
-    form(action='', method='post')
+    form(role='form', action='/api/events', method='post')
           div
             p
               | Event Name
-              input.form-control(type='text', name='eventname')
+              input.form-control(type='text', name='name')
           div
             p
               | Time
@@ -36,11 +36,13 @@ block content
           div
             p
               | Age Range
-              input.form-control(type='text', name='age')
+              input.form-control(type='text', name='ageRange')
           .form-group
             p
               | Alcohol Allowed?
               input.form-control(type='checkbox', name='Alcohol', value='yes')
           div
             p
-              a.btn.btn-lg.btn-warning(role="button", href="#") Submit >>
+              button.btn.btn-warning(type='submit') Submit 
+     br
+     
