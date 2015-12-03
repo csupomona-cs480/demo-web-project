@@ -106,6 +106,13 @@ app.get('/create', ensureLoggedIn('/login'), function (req, res, next) {
   });
 });
 
+app.get('/auth/created', ensureLoggedIn('/login'), function (req, res, next) {
+  res.render('pages/eventCreated', {
+    user: req.user,
+	url: req.url
+  });
+});
+
 app.get('/map', ensureLoggedIn('/login'), function (req, res, next) {
         res.render('pages/map', {
                    user: req.user,
