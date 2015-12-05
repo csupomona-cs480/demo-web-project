@@ -1,33 +1,23 @@
-Overview
+Overview:
 --------
+Here lies Bonis, a project for Software Engineering at Cal Poly Pomona.
 
-In here lies Bonis
+Bonis is a mobile web application for finding the best parties and group events nearest you. By
+signing up with your Facebook profile, you can see all the current events and their reviews.
 
-The project is the start of the real time tracker of events taking place around the user. 
-
-Environment Setup
------------------
-
-1. Install the nodejs
-2. in the directory that contains the .json file type "npm install"
-    This will install all the dependancies.
-YOU MUST INSTALL YOUR OWN MYSQL SERVER AND SET UP THE DATABASE AND CHANGE THE CONNECTION STRING TO WHAT YOU SET UP. 
-OR
-YOU NEED TO LOG ONTO GODADDY AND ADD YOUR SERVER TO THE REMOTE ACCESS LIST UNDER CPANEL AND USE THE CONNECTION STRING ALREADY IN THE FILE. PLEASE DON'T PUSH A NEW FILE WITH YOUR CONNECTION STRING. 
-
-Here is the website I got this skeleton from ref it while trying to get this project working. 
-https://scotch.io/tutorials/easy-node-authentication-setup-and-local
-
-Using tape to run test code
+Technologies (Under the hood):
 ---------------------------------------
-will get to this after my dental visit. (It seems my teeth are fine and do not need any work done on them.)
+Originally implemented with plain Node.js/Express, the application is now using
+the StrongLoop API Platform from the LoopBack framework, which runs on top of Express.
 
-tape seems to run better with jenkins
+All of the front end is done with Bootstrap and the jade language, along with some
+javascript, JQuery, and JSON to tie up loose ends and show events from our MySQL database.
 
-What this app does so far
-----------------------------------------
-This skeleton of an authtication for node and MySQL allows people to register for the website and that is pretty much the scope of it.
-It uses passport so intergration of facebook logon and most social media login is pretty easy to do. 
-It needs some improvements but for now we have something that we can test on build from. 
-MeriaDB uses all the same commands as mySQL so it just takes us setting up a meriaDB database and connecting to that. 
+On Running your own version:
+---------------------------------------
+1. Install Node.js
+2. Install StrongLoop
+3. Set server to run at localhost:8080
+4. Run 'node .' in the Bonis directory
 
+Done!
