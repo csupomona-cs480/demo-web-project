@@ -21,8 +21,6 @@ import edu.csupomona.cs480.util.ResourceResolver;
  */
 public class FSUserManager implements UserManager {
 
-	public static int[] counter = new int[1000];
-
 	/**
 	 * We persist all the user related objects as JSON.
 	 * <p>
@@ -79,7 +77,7 @@ public class FSUserManager implements UserManager {
 	@Override
 	public void updateUser(User user) {
 		UserMap userMap = getUserMap();
-		userMap.put(user.getId() + "6", user);
+		userMap.put(user.getId(), user);
 		persistUserMap(userMap);
 	}
 
@@ -92,9 +90,7 @@ public class FSUserManager implements UserManager {
 
 	@Override
 	public List<User> listAllUsers() {
-		counter[96] = 1;
 		UserMap userMap = getUserMap();
-		counter[98] = 1;
 		return new ArrayList<User>(userMap.values());
 	}
 

@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.GPSItem;
 import edu.csupomona.cs480.data.User;
-import edu.csupomona.cs480.data.provider.GPSPriceProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
@@ -39,9 +37,6 @@ public class WebController {
 	@Autowired
 	private UserManager userManager;
 
-	@Autowired
-	private GPSPriceProvider gpsProvider;
-
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
@@ -54,13 +49,12 @@ public class WebController {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK-in-Class-JENKINS-4.0";
+		return "OK";
 	}
 
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
-	 *
 	 * <p>
 	 * Note, when it returns from the Spring, it will be
 	 * automatically converted to JSON format.
@@ -124,11 +118,6 @@ public class WebController {
 	@RequestMapping(value = "/cs480/users/list", method = RequestMethod.GET)
 	List<User> listAllUsers() {
 		return userManager.listAllUsers();
-	}
-
-	@RequestMapping(value = "/gps/list", method = RequestMethod.GET)
-	List<GPSItem> listGPSPrices() {
-		return gpsProvider.listAllGPSItems();
 	}
 
 	/*********** Web UI Test Utility **********/
