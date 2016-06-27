@@ -132,4 +132,16 @@ public class WebController {
 		return modelAndView;
 	}
 
+	/**
+	 * Christopher Sanchez A3 Exercise
+	 * It returns a sick String yo
+	 * 	http://localhost:8080/cs480/ChrisRySa
+	 */
+	@RequestMapping(value = "/cs480/ChrisRySa", method = RequestMethod.GET)
+	String healthbar() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/cs480/ChrisRySa
+		return "Hey hows it going?";
+	}
 }
