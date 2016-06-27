@@ -145,17 +145,13 @@ public class WebController {
 		return "Hey hows it going?";
 	}
 	
-	/**
-	 * Troy Dome Assignment 3 Exercise
-	 * Returns a string when visited
-	 * 	http://localhost:8080/cs480/tddome
-	 */
+
+	 //Name: Troy Dome 
+	 //Assignment 3 Exercise (Part 3)
+	 //http://localhost:8080/cs480/tddome
 	@RequestMapping(value = "/cs480/tddome", method = RequestMethod.GET)
-	String healthbar() 
-	{
-		// You can replace this with other string,
-		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/cs480/tddome
+	String troyTest() {
+		//returns a simple physics lesson when site is visited
 		return "Physics Lesson:\nDon't fall down";
 	}
 }
