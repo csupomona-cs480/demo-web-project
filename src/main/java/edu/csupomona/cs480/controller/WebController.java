@@ -144,4 +144,18 @@ public class WebController {
 		// with the URL: http://localhost:8080/cs480/ChrisRySa
 		return "Hey hows it going?";
 	}
+	
+	/**
+	 * Troy Dome Assignment 3 Exercise
+	 * Returns a string when visited
+	 * 	http://localhost:8080/cs480/tddome
+	 */
+	@RequestMapping(value = "/cs480/tddome", method = RequestMethod.GET)
+	String healthbar() 
+	{
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/cs480/ChrisRySa
+		return "Physics Lesson:\nDon't fall down";
+	}
 }
