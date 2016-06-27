@@ -155,7 +155,7 @@ public class WebController {
 	{
 		// You can replace this with other string,
 		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/cs480/ChrisRySa
+		// with the URL: http://localhost:8080/cs480/tddome
 		return "Physics Lesson:\nDon't fall down";
 	}
 }
