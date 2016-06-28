@@ -67,6 +67,11 @@ public class WebController {
 		User user = userManager.getUser(userId);
 		return user;
 	}
+	
+	@RequestMapping(value = "/manny", method = RequestMethod.GET)
+	String mannyFunc() {
+		return "You have entered Manny's magic corner";
+	}
 
 	/**
 	 * This is an example of sending an HTTP POST request to
