@@ -55,6 +55,15 @@
             <version>1.2.0.RELEASE</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- Troy Dome
+        Added dependency to pom.xml for OpenNLP -->
+        <dependency>
+		    <groupId>org.apache.opennlp</groupId>
+		    <artifactId>opennlp</artifactId>
+		    <version>1.6.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
