@@ -1,5 +1,8 @@
 package edu.csupomona.cs480.controller;
 
+import java.time.LocalDate;
+
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -171,9 +174,16 @@ public class WebController {
 	/**
 	 * Name: Troy Dome
 	 * Assignment: 4 (Part 2)
-	 * Library: Joda Time v2.9.4
-	 * Testing out Joda Time by adding a new method.
-	 * This method will have its own web page.
-	 * It will 
-	 * */
+	 * Library: Time4J v4.17
+	 * Testing out Time4J by adding a new method.
+	 * It will return the current date and time for you.
+	 * Local Address: http://localhost:8080/cs480/datetime
+	 * Work in progress:
+	@RequestMapping(value = "cs480/datetime", method = RequestMethod.GET)
+	String timeyo() {
+		return "Today is "++"."
+				+"\nThe current time is "+;
+		*/
+	}
+	
 }
