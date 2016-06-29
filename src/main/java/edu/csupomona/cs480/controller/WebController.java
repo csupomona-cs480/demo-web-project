@@ -1,8 +1,5 @@
 package edu.csupomona.cs480.controller;
 
-import java.time.LocalDate;
-
-import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +14,11 @@ import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+//Added by Troy Dome
+//imports required for my Time4J method to work
+import net.time4j.*;
+import static net.time4j.PlainDate.DAY_OF_WEEK;
+import static net.time4j.Weekday.TUESDAY;
 
 /**
  * This is the controller used by Spring framework.
@@ -152,7 +154,6 @@ public class WebController {
 		// with the URL: http://localhost:8080/cs480/ChrisRySa
 		return "Hey hows it going?";
 	}
-	
 
 	 //Name: Troy Dome 
 	 //Assignment 3 Exercise (Part 3)
@@ -176,14 +177,14 @@ public class WebController {
 	 * Assignment: 4 (Part 2)
 	 * Library: Time4J v4.17
 	 * Testing out Time4J by adding a new method.
-	 * It will return the current date and time for you.
-	 * Local Address: http://localhost:8080/cs480/datetime
-	 * Work in progress:
+	 * It will tell you when next Tuesday is.
+	 * Local Address: http://localhost:8080/cs480/tuesday
 	 * */
-	@RequestMapping(value = "cs480/datetime", method = RequestMethod.GET)
+	@RequestMapping(value = "cs480/tuesday", method = RequestMethod.GET)
 	String timeyo() {
-		return "what";
-		
+		PlainDate t = SystemClock.inLocalView().today();
+		PlainDate tues = t.with(DAY_OF_WEEK.setToNext(TUESDAY));
+		return "When will next Tuesday be? "+tues;
 	}
 	
 }

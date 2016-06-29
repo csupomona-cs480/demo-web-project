@@ -62,6 +62,14 @@
             <version>1.2.0.RELEASE</version>
             <scope>test</scope>
         </dependency>
+        
+         <!-- Troy Dome
+        Added dependency to pom.xml for Time4J -->
+        <dependency>
+		    <groupId>net.time4j</groupId>
+		    <artifactId>time4j-core</artifactId>
+		    <version>4.17</version>
+        </dependency>
 	</dependencies>
 
 	<build>
