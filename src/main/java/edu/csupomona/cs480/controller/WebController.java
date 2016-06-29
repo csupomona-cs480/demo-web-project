@@ -1,7 +1,12 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -187,4 +192,25 @@ public class WebController {
 		return "When will next Tuesday be? "+tues;
 	}
 	
+	/**
+	 * Christopher Sanchez 
+	 * A4 Exercise (Part 2)
+	 * Should steal image URls 
+	 * from http://cs480-projects.github.io/teams-summer2016/index.html
+	 * I Hope!!!
+	 * 	http://localhost:8080/cs480/ChrisRySa/zone
+	 * @throws IOException 
+	*/
+	@RequestMapping(value = "/cs480/ChrisRySa/zone", method = RequestMethod.GET)
+	String manaBar() throws IOException {
+		// URL: http://localhost:8080/cs480/ChrisRySa/zone
+		Document doc;
+		doc = Jsoup.connect("http://cs480-projects.github.io/teams-summer2016/index.html").get();
+		Elements images = doc.select("img[src~=(?i)\\.(png|jpe?g|gif)]");
+		String imageString = "";
+		for (Element ele : images) {
+			imageString = imageString + "<html><img src=\"" + ele.attr("src") + "\" height = \"100\" width \"100\"></html>";
+		}
+		return imageString;
+	}
 }
