@@ -179,11 +179,11 @@ public class WebController {
 	 * It will return the current date and time for you.
 	 * Local Address: http://localhost:8080/cs480/datetime
 	 * Work in progress:
+	 * */
 	@RequestMapping(value = "cs480/datetime", method = RequestMethod.GET)
 	String timeyo() {
-		return "Today is "++"."
-				+"\nThe current time is "+;
-		*/
+		return "what";
+		
 	}
 	
 }
