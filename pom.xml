@@ -55,12 +55,6 @@
             <version>1.2.0.RELEASE</version>
             <scope>test</scope>
         </dependency>
-        
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>bootstrap-star-rating-fork-boostrap-dependency</artifactId>
-            <scope>test</scope>
-        </dependency>
 	</dependencies>
 
 	<build>
@@ -81,15 +75,4 @@
 		</plugins>
 	</build>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.webjars.bower</groupId>
-				<artifactId>
-					bootstrap-star-rating-fork-boostrap-dependency
-				</artifactId>
-				<version>3.5.4</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
