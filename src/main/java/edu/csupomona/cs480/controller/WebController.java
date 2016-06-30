@@ -15,6 +15,8 @@ import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
+import org.imgscalr.*;
+
 /**
  * This is the controller used by Spring framework.
  * <p>
@@ -160,11 +162,11 @@ public class WebController {
 		return "Physics Lesson:\nDon't fall down";
 	}
         
-        //Name: Troy Dome 
+        //Name: Johan Silla
 	//Assignment 3 Exercise (Part 3)
-	//http://localhost:8080/cs480/tddome
+	//http://localhost:8080/cs480/jdsilla
 	@RequestMapping(value = "/cs480/jdsilla", method = RequestMethod.GET)
-	String blah() {
+	String aliens() {
 		//returns a simple physics lesson when site is visited
 		return "<html><font face=verdana, size = 20>ayyy lmao</font></html>";
 	}
