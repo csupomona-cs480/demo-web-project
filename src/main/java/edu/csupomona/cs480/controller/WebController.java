@@ -159,4 +159,13 @@ public class WebController {
 		//returns a simple physics lesson when site is visited
 		return "Physics Lesson:\nDon't fall down";
 	}
+        
+        //Name: Troy Dome 
+	//Assignment 3 Exercise (Part 3)
+	//http://localhost:8080/cs480/tddome
+	@RequestMapping(value = "/cs480/jdsilla", method = RequestMethod.GET)
+	String blah() {
+		//returns a simple physics lesson when site is visited
+		return "<html><font face=verdana, size = 20>ayyy lmao</font></html>";
+	}
 }
