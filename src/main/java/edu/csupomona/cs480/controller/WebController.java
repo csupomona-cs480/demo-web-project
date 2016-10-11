@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
+import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
+import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
@@ -36,6 +38,9 @@ public class WebController {
 	 */
 	@Autowired
 	private UserManager userManager;
+	
+	@Autowired
+	private GpsProductManager gpsManager;
 
 	/**
 	 * This is a simple example of how the HTTP API works.
@@ -44,12 +49,12 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
-	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/ping-demo", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK";
+		return "OK-480";
 	}
 
 	/**
@@ -119,6 +124,16 @@ public class WebController {
 	List<User> listAllUsers() {
 		return userManager.listAllUsers();
 	}
+	
+	@RequestMapping(value = "/cs480/gps/list", method = RequestMethod.GET)
+	List<GpsProduct> listAllGpsProducts() {
+		return gpsManager.listAllGpsProducts();
+	}
+	
+	
+	
+	
+	
 
 	/*********** Web UI Test Utility **********/
 	/**
