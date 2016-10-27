@@ -22,18 +22,18 @@
 	<body ng-controller="GpsCtrl">		
 	    <div>
 	        <div>
-	            <label>GPS List (1.06)</label>
+	            <label>GPS List (1.2)</label>
 	            <table class="table table-striped table-bordered table-hover">
-	                <tr>	                    
+	                <tr>	          
+	                	<td>Image</td>          
 	                    <td>Name</td>
-	                    <td>Price</td>
-	                    <td>Image</td>
+	                    <td>Price</td>	                    
 	                </tr>
 
 	                <tr ng-repeat="gps in gpsProducts">
+	                	<td><img src="{{gps.imgUrl}}"></img></td>
 	                    <td>{{gps.name}}</td>
-	                    <td>{{gps.price}}</td>
-	                    <td><img src="{{gps.imgUrl}}"></img></td>	                    
+	                    <td>{{gps.price}}</td>	                    	                   
 	                </tr>
 	            </table>
 	        </div>	        
