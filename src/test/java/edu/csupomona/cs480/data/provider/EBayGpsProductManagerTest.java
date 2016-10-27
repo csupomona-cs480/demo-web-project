@@ -29,6 +29,5 @@ public class EBayGpsProductManagerTest {
 			}
 		}
 		System.out.println(counter + " / " + EBayGpsProductManager.lines.length);
-		Assert.fail("for test");
 	}
 }
