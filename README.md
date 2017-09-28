@@ -9,8 +9,8 @@ Environment Setup
 -----------------
 
 1. Install the latests Maven (http://maven.apache.org/download.cgi)
-2. Install the Eclipse 4+ (http://www.eclipse.org/)
-3. Install the Maven Eclipse Plug-in using the update site (http://www.eclipse.org/m2e/download/)
+2. Install the latest Eclipse (http://www.eclipse.org/)
+3. Make sure your Eclipse has Maven installed (It should have been included in the latest version of the Eclipse)
 
 Importing the Project into Eclipse
 ----------------------------------
