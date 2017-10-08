@@ -131,5 +131,14 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
+	/**
+	 * This API displays the total number of users in the current database.
+	 * 
+	 * @return the total number of users in the database
+	 */
+	@RequestMapping(value = "/cs480/users/total", method = RequestMethod.GET)
+	int getTotalUsers(){
+		return userManager.listAllUsers().size();
+	}
 
 }
