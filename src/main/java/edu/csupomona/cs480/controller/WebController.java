@@ -1,5 +1,6 @@
 package edu.csupomona.cs480.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -147,5 +148,21 @@ public class WebController {
 	int getTotalUsers(){
 		return userManager.listAllUsers().size();
 	}
+
+    /**
+     * This API displays the student userIds with queried major.
+     */
+    @RequestMapping(value = "/cs480/major/{major}", method = RequestMethod.GET)
+    List<User> getMajors(@PathVariable("major") String major) {
+        List<User> allUsers = listAllUsers();
+        List<User> withMajor = new ArrayList<>();
+        for(int i = 0; i < allUsers.size(); i++) {
+            User current = allUsers.get(i);
+            if (current.getMajor().equals(major)) {
+                withMajor.add(current);
+            }
+        }
+        return withMajor;
+    }
 
 }
