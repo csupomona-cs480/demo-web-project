@@ -55,6 +55,12 @@
             <version>1.2.0.RELEASE</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.8.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -68,8 +74,8 @@
 		        <artifactId>maven-compiler-plugin</artifactId>
 		        <configuration>
 		          <!-- JDK version; If you are using higher version, free feel to update it. -->
-		          <source>1.7</source>
-		          <target>1.7</target>
+		          <source>1.8</source>
+		          <target>1.8</target>
 		        </configuration>
 		    </plugin>
 		</plugins>
