@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -199,4 +200,13 @@ public class WebController {
     
     
 
+	/**
+	 * Usage of Java Joda-Time library to display a Joda-Time DateTime object from a
+     * less detailed java.util.Date object
+	 * @return Joda-Time date containing day, month, year, hour, sec, etc...
+	 */
+	@RequestMapping(value = "/date", method = RequestMethod.GET)
+	DateTime currentDateTime() {
+    	return new DateTime(new Date());
+	}
 }
