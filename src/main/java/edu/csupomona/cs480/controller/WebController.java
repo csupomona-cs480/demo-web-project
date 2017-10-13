@@ -1,7 +1,13 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
@@ -164,5 +175,28 @@ public class WebController {
         }
         return withMajor;
     }
+    @RequestMapping(value = "/cs480/users/pdf", method = RequestMethod.GET)
+    void getPdf(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            response.setContentType("application/pdf");
+            try {
+                // step 1
+                Document document = new Document();
+                // step 2
+                PdfWriter.getInstance(document, response.getOutputStream());
+                // step 3
+                document.open();
+                // step 4
+                document.add(new Paragraph("Current Users in Database as of "+new Date().toString()+":"));
+                for(User user : userManager.listAllUsers())
+                	document.add(new Paragraph(user.getName()));
+                // step 5
+                document.close();
+            } catch (DocumentException de) {
+                throw new IOException(de.getMessage());
+            }
+        }
+    
+    
 
 }
