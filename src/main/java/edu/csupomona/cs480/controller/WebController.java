@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.joda.time.DateTime;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -208,5 +210,15 @@ public class WebController {
 	@RequestMapping(value = "/date", method = RequestMethod.GET)
 	DateTime currentDateTime() {
     	return new DateTime(new Date());
+	}
+	
+	/**
+	 * Usage of Java Jsoup to parse all stories from hacker news, a news website
+	 */
+	@RequestMapping(value = "/hackernews", method = RequestMethod.GET) 
+	String latestNews() throws IOException {
+		org.jsoup.nodes.Document doc = Jsoup.connect("https://news.ycombinator.com/").get();
+		Elements newsHeadline = doc.select("a.storylink");
+		return newsHeadline.toString();
 	}
 }
