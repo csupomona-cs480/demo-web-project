@@ -9,6 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.math.complex.Complex;
+import org.apache.commons.math.random.JDKRandomGenerator;
+import org.apache.commons.math.random.RandomData;
+import org.apache.commons.math.random.UniformRandomGenerator;
 import org.joda.time.DateTime;
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
@@ -220,5 +224,17 @@ public class WebController {
 		org.jsoup.nodes.Document doc = Jsoup.connect("https://news.ycombinator.com/").get();
 		Elements newsHeadline = doc.select("a.storylink");
 		return newsHeadline.toString();
+	}
+
+	/**
+	 * Usage of Java Apache Math Commons to do some simple complex arithmetic
+	 */
+	@RequestMapping(value = "/complexmath", method = RequestMethod.GET)
+	String randomComplexSum() {
+		UniformRandomGenerator random = new UniformRandomGenerator(new JDKRandomGenerator());
+		Complex complex1 = new Complex(random.nextNormalizedDouble(), random.nextNormalizedDouble());
+		Complex complex2 = new Complex(random.nextNormalizedDouble(), random.nextNormalizedDouble());
+		Complex complexSum = complex1.add(complex2);
+		return "[ " + complex1.getReal() + ", " +  + complex1.getImaginary() + " ] + [ " + complex2.getReal() + ", " +  + complex2.getImaginary() + " ] = [ " + complexSum.getReal() + ", " +  + complexSum.getImaginary() + " ]" ;
 	}
 }
