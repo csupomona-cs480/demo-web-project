@@ -1,27 +1,60 @@
-package edu.csupomona.cs480.data;
+package edu.csupomona.cs480.data.entity;
 
+import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 
 /**
  * The basic user object.
  */
+@Entity
 public class User {
 
 	/** The unique user Id */
-    private String id;
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
     /** The unique user Id */
     private String name;
     /** The unique user Id */
     private String major;
+    @Version
+    private Integer version;
+    private String email;
+    private String userId;
     /** The timestamp when the user is being created */
     private String creationTime = new Date(System.currentTimeMillis()).toString();
 
-    public String getId() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

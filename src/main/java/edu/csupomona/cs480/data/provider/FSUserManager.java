@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.csupomona.cs480.data.User;
+import edu.csupomona.cs480.data.entity.User;
 import edu.csupomona.cs480.data.UserMap;
 import edu.csupomona.cs480.util.ResourceResolver;
 
@@ -77,7 +77,7 @@ public class FSUserManager implements UserManager {
 	@Override
 	public void updateUser(User user) {
 		UserMap userMap = getUserMap();
-		userMap.put(user.getId(), user);
+		userMap.put(user.getId().toString(), user);
 		persistUserMap(userMap);
 	}
 

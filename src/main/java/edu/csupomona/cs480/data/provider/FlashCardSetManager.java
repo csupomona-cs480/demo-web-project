@@ -1,9 +1,6 @@
 package edu.csupomona.cs480.data.provider;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import edu.csupomona.cs480.data.FlashCard;
 import edu.csupomona.cs480.data.FlashCardSet;
-import javafx.util.Pair;
 
 import java.util.List;
 
