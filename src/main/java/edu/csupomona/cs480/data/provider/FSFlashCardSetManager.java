@@ -2,7 +2,6 @@ package edu.csupomona.cs480.data.provider;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.csupomona.cs480.data.FlashCard;
 import edu.csupomona.cs480.data.FlashCardSet;
 import edu.csupomona.cs480.data.FlashCardSetMap;
 import edu.csupomona.cs480.util.ResourceResolver;

@@ -1,5 +1,7 @@
 package edu.csupomona.cs480.data;
 
+import edu.csupomona.cs480.data.entity.User;
+
 import java.util.HashMap;
 
 /**

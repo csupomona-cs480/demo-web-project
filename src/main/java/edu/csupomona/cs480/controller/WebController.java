@@ -13,7 +13,6 @@ import edu.csupomona.cs480.data.FlashCardSet;
 import edu.csupomona.cs480.data.provider.FlashCardSetManager;
 import org.apache.commons.math.complex.Complex;
 import org.apache.commons.math.random.JDKRandomGenerator;
-import org.apache.commons.math.random.RandomData;
 import org.apache.commons.math.random.UniformRandomGenerator;
 import org.joda.time.DateTime;
 import org.jsoup.Jsoup;
@@ -28,7 +27,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.User;
+import edu.csupomona.cs480.data.entity.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
@@ -118,7 +117,7 @@ public class WebController {
 			@RequestParam("name") String name,
 			@RequestParam(value = "major", required = false) String major) {
 		User user = new User();
-		user.setId(id);
+		user.setId(Integer.parseInt(id));
 		user.setMajor(major);
 		user.setName(name);
 		userManager.updateUser(user);

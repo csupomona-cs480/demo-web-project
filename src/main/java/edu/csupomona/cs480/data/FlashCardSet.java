@@ -1,5 +1,7 @@
 package edu.csupomona.cs480.data;
 
+import edu.csupomona.cs480.data.entity.Flashcard;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class FlashCardSet {
 	/**
 	 * The flash cards this set contains
 	 */
-	private List<FlashCard> flashcards;
+	private List<Flashcard> flashcards;
 
 	public FlashCardSet() {
 		flashcards = new ArrayList<>();
@@ -53,11 +55,11 @@ public class FlashCardSet {
 		this.id = id;
 	}
 
-	public List<FlashCard> getFlashcards() {
+	public List<Flashcard> getFlashcards() {
 		return flashcards;
 	}
 
-	public void setFlashcards(List<FlashCard> flashcards) {
+	public void setFlashcards(List<Flashcard> flashcards) {
 		this.flashcards = flashcards;
 	}
 
