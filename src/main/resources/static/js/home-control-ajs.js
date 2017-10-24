@@ -9,28 +9,28 @@ cs480App.controller('UserCtrl', function ($scope, $http) {
 	  	.success(function(data){
 	  		$scope.users = data;
 	  	});
-  }
+  };
 
   $scope.getUser = function() {
 	  $http.get("cs480/user/" + $scope.userIdToSearch)
 	  	.success(function(data){
 	  		$scope.founduser = data;
 	  	});
-  }
+  };
 
   $scope.addUser = function() {
 	  $http.post("cs480/user/" + $scope.new_id + "?name=" + $scope.new_name + "&major=" + $scope.new_major)
 	  	.success(function(data){
 	  		$scope.loadUsers();
 	  	});
-  }
+  };
 
   $scope.deleteUser = function(userId) {
 	  $http.delete("cs480/user/" + userId)
 	  	.success(function(data){
 	  		$scope.loadUsers();
 	  	});
-  }
+  };
 
   $scope.loadUsers();
 

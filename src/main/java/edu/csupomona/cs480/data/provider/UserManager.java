@@ -16,7 +16,7 @@ public interface UserManager {
 	 * @param userId
 	 * @return the User object
 	 */
-	public User getUser(String userId);
+    User getUser(String userId);
 
 	/**
 	 * Update the given user object and persist it.
@@ -28,20 +28,20 @@ public interface UserManager {
 	 *
 	 * @param user object
 	 */
-	public void updateUser(User user);
+    void updateUser(User user);
 
 	/**
 	 * Delete the given user from the storage.
 	 *
 	 * @param userId
 	 */
-	public void deleteUser(String userId);
+    void deleteUser(String userId);
 
 	/**
 	 * List all the current users in the storage.
 	 *
 	 * @return
 	 */
-	public List<User> listAllUsers();
+    List<User> listAllUsers();
 
 }

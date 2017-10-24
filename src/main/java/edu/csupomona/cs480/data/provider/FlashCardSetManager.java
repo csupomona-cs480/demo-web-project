@@ -15,7 +15,7 @@ public interface FlashCardSetManager {
 	 * @param id
 	 * @return the FlashCardSet object
 	 */
-	public FlashCardSet getFlashCardSet(String id);
+    FlashCardSet getFlashCardSet(String id);
 
 	/**
 	 * Update the given FlashCardSet object and persist it.
@@ -27,33 +27,33 @@ public interface FlashCardSetManager {
 	 *
 	 * @param set object
 	 */
-	public void updateFlashCardSet(FlashCardSet set);
+    void updateFlashCardSet(FlashCardSet set);
 
 	/**
 	 * Delete the given FlashCardSet from the storage.
 	 *
 	 * @param id
 	 */
-	public void deleteFlashCardSet(String id);
+    void deleteFlashCardSet(String id);
 
 	/**
 	 * List all the current sets in the storage.
 	 *
 	 * @return
 	 */
-	public List<String[]> listAllFlashCardSetIdNamePairs();
+    List<String[]> listAllFlashCardSetIdNamePairs();
 
 	/**
 	 * Turns a JSON string into an object
 	 *
 	 * @return the object
 	 */
-	public FlashCardSet parseJSON(String text);
+    FlashCardSet parseJSON(String text);
 
 	/**
 	 * Turns an object into a JSON string
 	 *
 	 * @return the txt of the object
 	 */
-	public String serializeJSON(FlashCardSet set);
+    String serializeJSON(FlashCardSet set);
 }
