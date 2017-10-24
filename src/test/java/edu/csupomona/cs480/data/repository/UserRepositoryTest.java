@@ -23,12 +23,14 @@ public class UserRepositoryTest {
 
     @Test
     public void testSaveUser1() {
-        User user = new User();
-        user.setName("Billy Bronco");
-        user.setEmail("bbronco@cpp.edu");
-
-        assertNotNull(user.getName());
-        userRepository.save(user);
+        User expectedUser = new User();
+        expectedUser.setName("Billy Bronco");
+        expectedUser.setEmail("bbronco@cpp.edu");
+        
+        userRepository.save(expectedUser);
+        User actualUser = userRepository.findOne(expectedUser.getId());
+        assertEquals(expectedUser.getName(), actualUser.getName());
+        assertEquals(expectedUser.getEmail(), actualUser.getEmail());
     }
 
     @Test

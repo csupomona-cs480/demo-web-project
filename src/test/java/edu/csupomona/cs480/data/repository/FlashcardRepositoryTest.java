@@ -29,9 +29,31 @@ public class FlashcardRepositoryTest {
         Flashcard flashcard = new Flashcard();
         flashcard.setSetId("Famous Software Developers");
         flashcard.setTerm("Linus Torvald");
-
         assertNotNull(flashcard.getTerm());
         flashcardRepository.save(flashcard);
         assertEquals(flashcardRepository.findBySetId("Famous Software Developers").get(0).getTerm(), flashcard.getTerm());
+    }
+    
+    @Test
+    public void testSaveFlashcard2() {
+    	Flashcard expectedFlashcard = new Flashcard();
+    	expectedFlashcard.setTerm("Binary Search Tree");
+    	expectedFlashcard.setDefinition("We learn this just because of the interview");
+    	flashcardRepository.save(expectedFlashcard);
+    	Flashcard actualFlashcard = flashcardRepository.findOne(expectedFlashcard.getId());
+    	assertEquals(expectedFlashcard.getTerm(), actualFlashcard.getTerm());
+    	assertEquals(expectedFlashcard.getDefinition(), actualFlashcard.getDefinition());
+    }
+    
+    @Test
+    public void testDeleteFlashcard() {
+    	Flashcard expectedFlashcard = new Flashcard();
+    	expectedFlashcard.setTerm("Binary Search Tree");
+    	expectedFlashcard.setDefinition("We learn this just because of the interview");
+    	flashcardRepository.save(expectedFlashcard);
+    	flashcardRepository.delete(expectedFlashcard.getId());
+    	Flashcard actualFlashcard = flashcardRepository.findOne(expectedFlashcard.getId());
+    	assertNull(actualFlashcard);
+    	assertEquals(flashcardRepository.count(), 0);
     }
 }
