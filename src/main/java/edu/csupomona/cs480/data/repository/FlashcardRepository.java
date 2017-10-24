@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface FlashcardRepository extends CrudRepository<Flashcard, Integer>{
 
-    public List<Flashcard> findByUserIdAndSetId(@Param("userId") Integer userId, @Param("setId") String setId);
-    public List<Flashcard> findBySetId(@Param("setId") String setId);
-    public List<Flashcard> findByUserId(@Param("userId") String userId);
+    List<Flashcard> findByUserIdAndSetId(@Param("userId") Integer userId, @Param("setId") String setId);
+    List<Flashcard> findBySetId(@Param("setId") String setId);
+    List<Flashcard> findByUserId(@Param("userId") String userId);
 
 }
