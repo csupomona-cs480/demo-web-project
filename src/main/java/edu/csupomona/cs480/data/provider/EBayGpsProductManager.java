@@ -43,7 +43,7 @@ public class EBayGpsProductManager implements GpsProductManager {
 				gpsProducts.get(i).setTitle(titles.get(i).text());
 			}
 
-			for(int i = 0; i < ; i++) {
+			for(int i = 0; i < 8; i++) {
 				Elements imageUrls = doc.select("div.lvpicinner a img");
 				System.out.println(imageUrls);
 				gpsProducts.get(i).setImageUrl(imageUrls.get(i).attr("src"));
