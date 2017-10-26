@@ -30,20 +30,20 @@ public class EBayGpsProductManager implements GpsProductManager {
 			flags[3] = true;
 			System.out.println(newsHeadlines);
 			flags[4] = true;
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < 8; i++) {
 				GpsProduct gpsProduct = new GpsProduct();
 				flags[5] = true;
 				gpsProduct.setPrice(newsHeadlines.get(i).text());
 				gpsProducts.add(gpsProduct);
 			}
 
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < 8; i++) {
 				Elements titles = doc.select("h3.lvtitle a");
 				System.out.println(titles);
 				gpsProducts.get(i).setTitle(titles.get(i).text());
 			}
 
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < ; i++) {
 				Elements imageUrls = doc.select("div.lvpicinner a img");
 				System.out.println(imageUrls);
 				gpsProducts.get(i).setImageUrl(imageUrls.get(i).attr("src"));
