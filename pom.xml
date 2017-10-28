@@ -134,14 +134,14 @@
 				</configuration>
 			</plugin>
 		</plugins>
-        <!--Added wagon in an attemtp to try to fix a jenkins deployment error-->
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-file</artifactId>
-                <version>1.0-beta-3</version>
-            </extension>
-       </extensions>
+        <!--Added wagon in an attempt to try to fix a jenkins deployment error-->
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-file</artifactId>
+				<version>1.0-beta-3</version>
+			</extension>
+		</extensions>
 	</build>
 
 </project>
