@@ -38,19 +38,19 @@ public class AudioController {
 
         InputStream is = helper.synthesize(msg, OutputFormat.Mp3);
 
-        AdvancedPlayer player = new AdvancedPlayer(is, javazoom.jl.player.FactoryRegistry.systemRegistry().createAudioDevice());
-
-        player.setPlayBackListener(new PlaybackListener() {
-            @Override
-            public void playbackStarted(PlaybackEvent evt) {
-                System.out.println(msg);
-            }
-
-            @Override
-            public void playbackFinished(PlaybackEvent evt) {
-                super.playbackFinished(evt);
-            }
-        });
+//        AdvancedPlayer player = new AdvancedPlayer(is, javazoom.jl.player.FactoryRegistry.systemRegistry().createAudioDevice());
+//
+//        player.setPlayBackListener(new PlaybackListener() {
+//            @Override
+//            public void playbackStarted(PlaybackEvent evt) {
+//                System.out.println(msg);
+//            }
+//
+//            @Override
+//            public void playbackFinished(PlaybackEvent evt) {
+//                super.playbackFinished(evt);
+//            }
+//        });
 //        player.play();
 //
         return StreamUtils.copyToByteArray(is);
