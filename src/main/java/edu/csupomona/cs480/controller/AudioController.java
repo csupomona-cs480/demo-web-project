@@ -32,8 +32,8 @@ public class AudioController {
 
     @RequestMapping(path="/audio", produces="audio/mpeg3")
     public @ResponseBody
-        //byte[] textToSpeech(@RequestParam("msg") String msg) throws IOException, JavaLayerException {
-        void textToSpeech(@RequestParam("msg") String msg) throws IOException, JavaLayerException {
+        byte[] textToSpeech(@RequestParam("msg") String msg) throws IOException, JavaLayerException {
+        //void textToSpeech(@RequestParam("msg") String msg) throws IOException, JavaLayerException {
         PollyHelper helper = new PollyHelper(Region.getRegion(Regions.US_EAST_1));
 
         InputStream is = helper.synthesize(msg, OutputFormat.Mp3);
@@ -51,8 +51,8 @@ public class AudioController {
                 super.playbackFinished(evt);
             }
         });
-        player.play();
-
-        //return StreamUtils.copyToByteArray(is);
+//        player.play();
+//
+        return StreamUtils.copyToByteArray(is);
     }
 }
