@@ -103,6 +103,18 @@
             <artifactId>commons-math</artifactId>
             <version>2.2</version>
         </dependency>
+        <!-- text-to-speech -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-polly</artifactId>
+			<version>1.11.62</version>
+		</dependency>
+        <!-- MP3 Player -->
+        <dependency>
+            <groupId>com.googlecode.soundlibs</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1-1</version>
+        </dependency>
 
 		<!--WebJars-->
 		<dependency>
