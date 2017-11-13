@@ -275,10 +275,11 @@ public class WebController {
 	/**
 	 * @return a list of all of the id, name pairs
 	 */
-	@RequestMapping(value = "/sets", method = RequestMethod.GET)
+	@RequestMapping(value = "/allsets", method = RequestMethod.GET)
 	List<String[]> getAllSetIdNamePairs() {
 		return flashCardSetManager.listAllFlashCardSetIdNamePairs();
 	}
+	
 
 
 	/**

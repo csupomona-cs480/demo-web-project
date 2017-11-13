@@ -15,4 +15,8 @@ public class NavbarController {
     String create() {
     	return "index";
     }
+    @RequestMapping("/sets")
+    String sets() {
+    	return "index";
+    }
 }
