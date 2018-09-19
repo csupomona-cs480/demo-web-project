@@ -40,6 +40,14 @@ public class WebController {
 	private UserManager userManager;
 	@Autowired
 	private GpsProductManager gpsProductManager;
+	
+	@RequestMapping(value = "/codingronin/thetsoe", method = RequestMethod.GET)
+	String tpsoeCheck() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Thet Soe";
+	}
 
 	/**
 	 * This is a simple example of how the HTTP API works.
