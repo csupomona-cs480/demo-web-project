@@ -48,6 +48,14 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "Thet Soe";
 	}
+	
+	@RequestMapping(value = "/codingronin/brandonwong", method = RequestMethod.GET)
+	String namePrint() {
+		//run with application locally to check your changes with the URL: http://localhost.8080/
+		return "Brandon's here!";
+	
+	}
+	
 
 	/**
 	 * This is a simple example of how the HTTP API works.
