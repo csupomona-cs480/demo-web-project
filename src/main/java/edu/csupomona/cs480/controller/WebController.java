@@ -124,7 +124,7 @@ public class WebController {
 
 	/**
 	 * This API lists all the users in the current database.
-	 *
+	 * 
 	 * @return
 	 */
 	@RequestMapping(value = "/cs480/users/list", method = RequestMethod.GET)
@@ -138,8 +138,8 @@ public class WebController {
 	}
 
 	/**
-	 * This API lists all the users in the current database.
-	 *
+	 * This API returns the size of the User List
+	 * http://localhost:8080/cs480/users/size
 	 * @return
 	 */
 	@RequestMapping(value = "/cs480/users/size", method = RequestMethod.GET)
