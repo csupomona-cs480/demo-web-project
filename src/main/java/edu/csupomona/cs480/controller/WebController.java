@@ -144,12 +144,20 @@ public class WebController {
 	 */
 	@RequestMapping(value = "/cs480/users/size", method = RequestMethod.GET)
 	int getNumOfUsers() {
-		return userManager.listAllUsers().size();
+		try
+		{
+			return userManager.listAllUsers().size();
+		}
+		catch (Exception e) {return -1;}
 	}
 	
 	@RequestMapping(value = "/cs480/gps/size", method = RequestMethod.GET)
 	int getNumOfGpsProducts() {
-		return gpsProductManager.listAllGpsProducts().size();
+		try
+		{
+			return gpsProductManager.listAllGpsProducts().size();
+		}
+		catch (Exception e) {return -1;}
 	}
 	
 	/*********** Web UI Test Utility **********/
