@@ -141,4 +141,10 @@ public class WebController {
 		return modelAndView;
 	}
 
+	@RequestMapping(value = "/cs480/TeamNULL/KyleHubbard", method = RequestMethod.GET)
+	String kyleHubbard() {
+
+		return "New HTTP Get Request: Kyle Hubbard from Team NULL";
+	}
+
 }
