@@ -149,11 +149,7 @@ public class WebController {
 	
 	@RequestMapping(value = "/cs480/gps/size", method = RequestMethod.GET)
 	int getNumOfGpsProducts() {
-		if (gpsProductManager.listAllGpsProducts().size() == 0) {
-			return 0;
-		}
-		else
-			return gpsProductManager.listAllGpsProducts().size();
+		return gpsProductManager.listAllGpsProducts().size();
 	}
 	
 	/*********** Web UI Test Utility **********/
