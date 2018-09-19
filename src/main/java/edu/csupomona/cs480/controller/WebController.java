@@ -128,7 +128,22 @@ public class WebController {
 	List<GpsProduct> listGpsProducts() {
 		return gpsProductManager.listAllGpsProducts();
 	}
-
+	
+	/**
+	 * This API returns the number of users
+	 *
+	 * @return
+	 */
+	@RequestMapping(value = "/cs480/users/list", method = RequestMethod.GET)
+	int getNumOfUsers() {
+		return userManager.listAllUsers().size();
+	}
+	
+	@RequestMapping(value = "/cs480/gps/list", method = RequestMethod.GET)
+	int getNumOfGpsProducts() {
+		return gpsProductManager.listAllGpsProducts().size();
+	}
+	
 	/*********** Web UI Test Utility **********/
 	/**
 	 * This method provide a simple web UI for you to test the different
