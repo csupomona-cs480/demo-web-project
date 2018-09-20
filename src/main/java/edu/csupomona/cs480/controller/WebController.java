@@ -148,8 +148,14 @@ public class WebController {
 	}
 	
 	@RequestMapping(value = "/cs480/TeamNULL/CarlosHernandez", method = RequestMethod.GET)
-	int showName() {
+	String showName() {
 		return "Carlos Hernandez - CS4800 - 01";
 	}
+
+	@RequestMapping(value = "/cs480/TeamNULL/AronHubbard", method = RequestMethod.GET)
+	String aronHubbard() {
+		return "Aron Hubbard - Team NULL";
+	}
+
 
 }
