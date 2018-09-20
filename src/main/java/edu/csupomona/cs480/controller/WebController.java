@@ -74,6 +74,12 @@ public class WebController {
 	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String groupShout() {
 		return "BIG DATA!!!";
+	}
+	
+	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
+	String chrisShout() {
+		return "I have no idea what I'm doing!!!";
+	}
 
 	/**
 	 * This is a simple example of how to use a data manager
