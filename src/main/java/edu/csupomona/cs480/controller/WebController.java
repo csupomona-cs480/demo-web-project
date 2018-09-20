@@ -71,6 +71,14 @@ public class WebController {
 		User user = userManager.getUser(userId);
 		return user;
 	}
+	
+	@RequestMapping(value = "/Peter", method = RequestMethod.GET)
+	String peter() {
+		// You can replace this with other strings,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "My name is Alex, have a nice day. /n This is what Alex would say, But I am not Alex. I AM GROOT, just kidding this is peter";
+	}
 
 	/**
 	 * This is an example of sending an HTTP POST request to
