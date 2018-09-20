@@ -146,5 +146,10 @@ public class WebController {
 
 		return "New HTTP Get Request: Kyle Hubbard from Team NULL";
 	}
+	
+	@RequestMapping(value = "/cs480/TeamNULL/CarlosHernandez", method = RequestMethod.GET)
+	int showName() {
+		return "Carlos Hernandez - CS4800 - 01";
+	}
 
 }
