@@ -158,6 +158,7 @@ public class WebController {
 	/**
 	 * This API returns the size of the User List
 	 * http://localhost:8080/cs480/users/size
+	 * Author: Joshua Yi - ChipuChipu
 	 * @return
 	 */
 	@RequestMapping(value = "/cs480/users/size", method = RequestMethod.GET)
