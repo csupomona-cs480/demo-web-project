@@ -49,8 +49,12 @@ public class WebController {
 		return "Thet Soe";
 	}
 	
+	@RequestMapping(value ="/codingronin/warren", method = RequestMethod.GET)
+	String warrenRonin() {
+		return "One for All!";
+	}
 	@RequestMapping(value = "/codingronin/yo_its_brandon", method = RequestMethod.GET)
-	String namePrint() {
+	String namePrint2() {
 		//run with application locally to check your changes with the URL: http://localhost.8080/
 		return "Brandon's here!";
 	
