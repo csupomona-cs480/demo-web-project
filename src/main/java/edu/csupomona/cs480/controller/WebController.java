@@ -156,6 +156,9 @@ public class WebController {
 	String aronHubbard() {
 		return "Aron Hubbard - Team NULL";
 	}
-
-
+	@RequestMapping(value = "/cs480/TeamNULL/YujinKwon", method = RequestMethod.GET)
+	String myStringYK() {
+		return "Yujin Kwon ";
+	}
+	
 }
