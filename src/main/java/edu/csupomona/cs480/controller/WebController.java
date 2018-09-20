@@ -80,6 +80,11 @@ public class WebController {
 	String chrisShout() {
 		return "I have no idea what I'm doing!!!";
 	}
+	
+	@RequestMapping(value = "/cs480/demo", method = RequestMethod.GET) 
+	String innerThoughts() {
+		return "pls help";
+	}
 
 	/**
 	 * This is a simple example of how to use a data manager
