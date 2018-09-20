@@ -15,6 +15,7 @@ import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 /**
@@ -54,6 +55,16 @@ public class WebController {
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
 		return "OK-CS480-Demo";
+	}
+
+	/**
+	 * HTTP API that redirects you to another page
+	 */
+
+	@RequestMapping(value = "/google", method = RequestMethod.GET)
+	ModelAndView redirectGoogle(){
+		String redirURL = "http://www.google.com";
+		return new ModelAndView(new RedirectView(redirURL));
 	}
 
 	/**
