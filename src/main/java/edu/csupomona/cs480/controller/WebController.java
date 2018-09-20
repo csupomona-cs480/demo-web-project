@@ -68,6 +68,14 @@ public class WebController {
 	}
 
 	/**
+	 * HTTP API that returns sample string in response
+	 */
+
+	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
+	String groupShout() {
+		return "BIG DATA!!!";
+
+	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
 	 * <p>
