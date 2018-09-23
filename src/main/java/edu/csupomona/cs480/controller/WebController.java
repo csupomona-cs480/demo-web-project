@@ -85,7 +85,10 @@ public class WebController {
 	String innerThoughts() {
 		return "pls help";
 	}
-
+	@RequestMapping(value = "/cs480", method = RequestMethod.GET)
+	String blahBlah(){
+		return "blah blah";
+	}
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
