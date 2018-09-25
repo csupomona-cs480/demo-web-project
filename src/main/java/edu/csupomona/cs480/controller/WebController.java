@@ -18,6 +18,10 @@ import edu.csupomona.cs480.data.provider.UserManager;
 
 // Joshua Yi - Commons IO Library Import
 import org.apache.commons.io.IOUtils;
+// YeukNam Lam - Commons Math Library Import
+// Import common PRNG interface and factory class that instantiates the PRNG.
+import org.apache.commons.rng.UniformRandomProvider;
+import org.apache.commons.rng.RandomSource;
 
 /**
  * This is the controller used by Spring framework.
@@ -199,6 +203,30 @@ public class WebController {
 		catch (Exception e) {e.printStackTrace();}
 		
 		return "FAILED";
+	}
+	
+	/*
+	 * This API generate a randon number with Gaussian method
+	 * Uses Apache Commons Math Library
+	 * http://localhost:8080/cs480/users/randomNum
+	 * Author: YeukNam Lam
+	 * @ return
+	 */
+	@RequestMapping(value = "/cs480/users/randomNum", method = RequestMethod.GET)
+	string randomNum()
+	{
+		// Create (and possibly seed) a PRNG (could use any of the CM-provided generators).
+		long seed = 17399225432L; // Fixed seed means same results every time 
+		UniformRandomProvider rg = RandomSource.create(RandomSource.MT, seed);
+
+		// Create a GaussianRandomGenerator using "rg" as its source of randomness.
+		GaussianRandomGenerator rawGenerator = new GaussianRandomGenerator(rg);
+
+		// Create a CorrelatedRandomVectorGenerator using "rawGenerator" for the components.
+		CorrelatedRandomVectorGenerator generator = 
+   		new CorrelatedRandomVectorGenerator(mean, covariance, 1.0e-12 * covariance.getNorm(), rawGenerator);
+		
+		return "Not Finish";
 	}
 	
 	/*********** Web UI Test Utility **********/
