@@ -16,6 +16,8 @@ import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+// Joshua Yi - Commons IO Library Import
+import org.apache.commons.io.IOUtils;
 
 /**
  * This is the controller used by Spring framework.
@@ -177,6 +179,26 @@ public class WebController {
 			return gpsProductManager.listAllGpsProducts().size();
 		}
 		catch (Exception e) {return -1;}
+	}
+	
+	/**
+	 * This API returns a string read in from Google.com
+	 * Uses Apache Commons IO Library
+	 * http://localhost:8080/cs480/users/readGoogleUrl
+	 * Author: Joshua Yi - ChipuChipu
+	 * @return
+	 */	
+	@RequestMapping(value = "/cs480/users/readGoogleUrl", method = RequestMethod.GET)
+	string readGoogleUrl()
+	{
+		InputStream in = new URL ("https://www.google.com").openStream();
+		try
+		{
+			return IOUtils.toString(in);
+		}
+		catch (Exception e) {e.printStackTrace();}
+		
+		return "FAILED";
 	}
 	
 	/*********** Web UI Test Utility **********/
