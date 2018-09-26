@@ -1,16 +1,16 @@
 package edu.csupomona.cs480.data;
 
-public class GpsProduct {
-
-	private String title;
+public class FireSafetyItem {
+	
+	private String name;
 	private String price;
 	private String imageUrl;
 	
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPrice() {
 		return price;
@@ -24,9 +24,5 @@ public class GpsProduct {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-	@Override
-	public String toString() {
-		return "GpsProduct [title=" + title + ", price=" + price + ", imageUrl=" + imageUrl + "]";
-	}
-	
+
 }

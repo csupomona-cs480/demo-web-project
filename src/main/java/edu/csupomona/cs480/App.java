@@ -6,10 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import edu.csupomona.cs480.data.provider.EBayGpsProductManager;
 import edu.csupomona.cs480.data.provider.FSUserManager;
-import edu.csupomona.cs480.data.provider.GpsProductManager;
+import edu.csupomona.cs480.data.provider.FireSafetyProvider;
+import edu.csupomona.cs480.data.provider.GpsProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
+import edu.csupomona.cs480.data.provider.WalmartFireSafetyProvider;
+import edu.csupomona.cs480.data.provider.WalmartGpsProvider;
 
 @Configuration
 @EnableAutoConfiguration
@@ -29,10 +31,17 @@ public class App {
     }
     
     @Bean
-    public GpsProductManager gpsProductManager() {
-    	GpsProductManager gpsManager = new EBayGpsProductManager();
-        return gpsManager;
+    public GpsProvider gpsProvider() {
+    	GpsProvider gpsProvider = new WalmartGpsProvider();
+    	return gpsProvider;
     }
+   
+    @Bean
+    public FireSafetyProvider fireSafetyProvider() {
+    	FireSafetyProvider fire = new WalmartFireSafetyProvider();
+    	return fire;
+    }
+   
 
     /**
      * This is the running main method for the web application.

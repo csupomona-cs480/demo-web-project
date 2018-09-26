@@ -11,10 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.GpsProduct;
+import edu.csupomona.cs480.data.FireSafetyItem;
+import edu.csupomona.cs480.data.GpsItem;
 import edu.csupomona.cs480.data.User;
-import edu.csupomona.cs480.data.provider.GpsProductManager;
+import edu.csupomona.cs480.data.provider.FSUserManager;
+import edu.csupomona.cs480.data.provider.FireSafetyProvider;
+import edu.csupomona.cs480.data.provider.GpsProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
+import edu.csupomona.cs480.data.provider.WalmartGpsProvider;
 
 
 /**
@@ -37,9 +41,11 @@ public class WebController {
 	 * the {@link App} class.
 	 */
 	@Autowired
-	private UserManager userManager;
+	private UserManager userManager;	
 	@Autowired
-	private GpsProductManager gpsProductManager;
+	private GpsProvider gpsProvider;
+	@Autowired
+	private FireSafetyProvider fireSafetyProvider;
 
 	/**
 	 * This is a simple example of how the HTTP API works.
@@ -70,6 +76,11 @@ public class WebController {
 	User getUser(@PathVariable("userId") String userId) {
 		User user = userManager.getUser(userId);
 		return user;
+	}
+	
+	@RequestMapping(value = "/fall18/gps/list", method = RequestMethod.GET)
+	List<GpsItem> listGpsItems() {
+		return gpsProvider.listAllGpsItems();
 	}
 
 	/**
@@ -114,6 +125,10 @@ public class WebController {
 		userManager.deleteUser(userId);
 	}
 
+	@RequestMapping(value = "/cs580/fire/list", method = RequestMethod.GET)
+	List<FireSafetyItem> listFireSafetyItems() {
+		return fireSafetyProvider.listFireSafetyItems();
+	}
 	/**
 	 * This API lists all the users in the current database.
 	 *
@@ -124,11 +139,6 @@ public class WebController {
 		return userManager.listAllUsers();
 	}
 	
-	@RequestMapping(value = "/cs480/gps/list", method = RequestMethod.GET)
-	List<GpsProduct> listGpsProducts() {
-		return gpsProductManager.listAllGpsProducts();
-	}
-
 	/*********** Web UI Test Utility **********/
 	/**
 	 * This method provide a simple web UI for you to test the different
