@@ -3,6 +3,7 @@ package edu.csupomona.cs480.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.BridgeMethodResolver;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,11 +18,18 @@ import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 // Joshua Yi - Commons IO Library Import
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import org.apache.commons.io.IOUtils;
+
 // YeukNam Lam - Commons Math Library Import
 // Import common PRNG interface and factory class that instantiates the PRNG.
-import org.apache.commons.rng.UniformRandomProvider;
-import org.apache.commons.rng.RandomSource;
+//import org.apache.commons.rng.UniformRandomProvider;
+//import org.apache.commons.rng.RandomSource;
 
 /**
  * This is the controller used by Spring framework.
@@ -193,16 +201,27 @@ public class WebController {
 	 * @return
 	 */	
 	@RequestMapping(value = "/cs480/users/readGoogleUrl", method = RequestMethod.GET)
-	string readGoogleUrl()
+	String readGoogleUrl()
 	{
-		InputStream in = new URL ("https://www.google.com").openStream();
+		
 		try
 		{
-			return IOUtils.toString(in);
+			InputStream in = new URL("https://google.com").openStream();
+			InputStreamReader inR = new InputStreamReader(in);
+			BufferedReader br = new BufferedReader(inR);
+			String line = br.readLine();
+			int index = line.indexOf("<head>");
+			int endIndex = line.indexOf("name");
+			String subLine = line.substring(index, endIndex);
+			
+			System.out.println("Size of subLine:" + subLine.length());
+			return "SUCCESS!";
+			
+		} catch(Exception e) 
+		{
+			e.printStackTrace();
+			return "FAILED!";
 		}
-		catch (Exception e) {e.printStackTrace();}
-		
-		return "FAILED";
 	}
 	
 	/*
@@ -212,6 +231,7 @@ public class WebController {
 	 * Author: YeukNam Lam
 	 * @ return
 	 */
+	/*
 	@RequestMapping(value = "/cs480/users/randomNum", method = RequestMethod.GET)
 	string randomNum()
 	{
@@ -228,7 +248,7 @@ public class WebController {
 		
 		return "Not Finish";
 	}
-	
+	*/
 	/*********** Web UI Test Utility **********/
 	/**
 	 * This method provide a simple web UI for you to test the different
