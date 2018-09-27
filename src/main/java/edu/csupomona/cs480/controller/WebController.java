@@ -151,4 +151,24 @@ public class WebController {
 		return modelAndView;
 	}
 
+	@RequestMapping(value = "/cs480/TeamNULL/KyleHubbard", method = RequestMethod.GET)
+	String kyleHubbard() {
+
+		return "New HTTP Get Request: Kyle Hubbard from Team NULL";
+	}
+	
+	@RequestMapping(value = "/cs480/TeamNULL/CarlosHernandez", method = RequestMethod.GET)
+	String showName() {
+		return "Carlos Hernandez - CS4800 - 01";
+	}
+
+	@RequestMapping(value = "/cs480/TeamNULL/AronHubbard", method = RequestMethod.GET)
+	String aronHubbard() {
+		return "Aron Hubbard - Team NULL";
+	}
+	@RequestMapping(value = "/cs480/TeamNULL/YujinKwon", method = RequestMethod.GET)
+	String myStringYK() {
+		return "Yujin Kwon ";
+	}
+	
 }
