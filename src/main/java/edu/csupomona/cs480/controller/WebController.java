@@ -225,6 +225,34 @@ public class WebController {
 	}
 	
 	/*
+	 * Warren Xie 
+	 */
+	@RequestMapping(value = "cs480/users/readWarren", method = RequestMethod.GET)
+	Integer guavaTesting() {
+		Integer value1 = null;
+		Integer value2 = new Integer(10);
+		
+		
+		
+		Optional<Integer> a = Optional.fromNullable(value1);
+		Optional<Integer> b = Optional.of(value2);
+		
+		return sum(a,b);
+	}
+	
+	public Integer sum( Optional<Integer>a,Optional<Integer>b) {
+		System.out.println("A is: "+ a.isPresent());
+		
+		System.out.println("B is: "+b.isPresent());
+		
+		Integer value1 = a.or(new Integer(0));
+		
+		Integer value2 = b.get();
+		
+		return value1 + value2;
+	}
+	
+	/*
 	 * This API generate a randon number with Gaussian method
 	 * Uses Apache Commons Math Library
 	 * http://localhost:8080/cs480/users/randomNum
