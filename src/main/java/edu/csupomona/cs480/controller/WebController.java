@@ -28,6 +28,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.apache.commons.io.IOUtils;
 
+//Brandon Wong - Commons Text
+import org.apache.commons.text;
+
 // YeukNam Lam - Commons Math Library Import
 // Import common PRNG interface and factory class that instantiates the PRNG.
 //import org.apache.commons.rng.UniformRandomProvider;
@@ -240,6 +243,16 @@ public class WebController {
 		Optional<Integer> b = Optional.of(value2);
 		
 		return sum(a,b);
+	}
+	
+	/*
+	 * Brandon Wong
+	 */
+	@RequestMapping(value = "cs480/users/ ", method = RequestMethod.GET)
+	String randString() {
+		String s = "";
+		s.generate(10);
+		return s; 
 	}
 	
 	public Integer sum( Optional<Integer>a,Optional<Integer>b) {
