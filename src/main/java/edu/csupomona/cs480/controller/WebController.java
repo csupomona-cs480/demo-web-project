@@ -247,11 +247,13 @@ public class WebController {
 	
 	/*
 	 * Brandon Wong
+	 * http://localhost:8080/cs480/users/RandomText
+	 * Uses Commons Text Library
 	 */
 	@RequestMapping(value = "cs480/users/RandomText", method = RequestMethod.GET)
 	String randString() {
-		String s = "";
-		s.generate(10);
+		String s;
+		s = s.generate(10);
 		return s; 
 	}
 	
