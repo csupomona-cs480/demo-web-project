@@ -69,6 +69,13 @@
 	    <version>2.6</version>
 	</dependency>
 		
+	<!-- Brandon Wong - Commons Text-->
+	<dependency>
+		<groupID>org.apache.commons</groupID>
+		<artifactID>commons-text</artifactID>
+		<version>1.4</version>
+	</dependency>
+		
 	<!-- YeukNam Lam - Commons Math -->
 	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
 	<dependency>
