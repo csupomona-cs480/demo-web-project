@@ -248,7 +248,7 @@ public class WebController {
 	/*
 	 * Brandon Wong
 	 */
-	@RequestMapping(value = "cs480/users/ ", method = RequestMethod.GET)
+	@RequestMapping(value = "cs480/users/RandomText", method = RequestMethod.GET)
 	String randString() {
 		String s = "";
 		s.generate(10);
