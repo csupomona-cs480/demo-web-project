@@ -16,6 +16,8 @@ import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
+// Warren Xie - Google Guava Library Import
+import com.google.common.base.Optional;
 
 // Joshua Yi - Commons IO Library Import
 import java.io.BufferedReader;
