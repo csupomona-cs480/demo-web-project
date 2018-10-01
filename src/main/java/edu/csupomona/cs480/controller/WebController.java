@@ -33,8 +33,8 @@ import org.apache.commons.text;
 
 // YeukNam Lam - Commons Math Library Import
 // Import common PRNG interface and factory class that instantiates the PRNG.
-//import org.apache.commons.rng.UniformRandomProvider;
-//import org.apache.commons.rng.RandomSource;
+import org.apache.commons.rng.UniformRandomProvider;
+import org.apache.commons.rng.RandomSource;
 
 /**
  * This is the controller used by Spring framework.
@@ -276,7 +276,7 @@ public class WebController {
 	 * Author: YeukNam Lam
 	 * @ return
 	 */
-	/*
+	
 	@RequestMapping(value = "/cs480/users/randomNum", method = RequestMethod.GET)
 	string randomNum()
 	{
@@ -291,9 +291,9 @@ public class WebController {
 		CorrelatedRandomVectorGenerator generator = 
    		new CorrelatedRandomVectorGenerator(mean, covariance, 1.0e-12 * covariance.getNorm(), rawGenerator);
 		
-		return "Not Finish";
+		return generator;
 	}
-	*/
+	
 	/*********** Web UI Test Utility **********/
 	/**
 	 * This method provide a simple web UI for you to test the different
