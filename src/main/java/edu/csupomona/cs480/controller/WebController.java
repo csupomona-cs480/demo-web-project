@@ -31,10 +31,10 @@ import org.apache.commons.io.IOUtils;
 //Brandon Wong - Commons Text
 import org.apache.commons.text;
 
-// YeukNam Lam - Commons Math Library Import
-// Import common PRNG interface and factory class that instantiates the PRNG.
-import org.apache.commons.rng.UniformRandomProvider;
-import org.apache.commons.rng.RandomSource;
+// YeukNam Lam - Commons Email
+import org.apache.commons.mail	
+import org.apache.commons.mail.resolver	
+import org.apache.commons.mail.util
 
 /**
  * This is the controller used by Spring framework.
@@ -208,7 +208,6 @@ public class WebController {
 	@RequestMapping(value = "/cs480/users/readGoogleUrl", method = RequestMethod.GET)
 	String readGoogleUrl()
 	{
-		
 		try
 		{
 			InputStream in = new URL("https://google.com").openStream();
@@ -270,28 +269,24 @@ public class WebController {
 	}
 	
 	/*
-	 * This API generate a randon number with Gaussian method
-	 * Uses Apache Commons Math Library
-	 * http://localhost:8080/cs480/users/randomNum
+	 * Create a basic email message to "John Doe" and send it through your Google Mail (GMail) account.
+	 * Uses Apache Commons Email Library
+	 * http://localhost:8080/cs480/users/email
 	 * Author: YeukNam Lam
-	 * @ return
 	 */
-	
-	@RequestMapping(value = "/cs480/users/randomNum", method = RequestMethod.GET)
-	string randomNum()
+	@RequestMapping(value = "/cs480/users/email", method = RequestMethod.GET)
+	void email()
 	{
-		// Create (and possibly seed) a PRNG (could use any of the CM-provided generators).
-		long seed = 17399225432L; // Fixed seed means same results every time 
-		UniformRandomProvider rg = RandomSource.create(RandomSource.MT, seed);
-
-		// Create a GaussianRandomGenerator using "rg" as its source of randomness.
-		GaussianRandomGenerator rawGenerator = new GaussianRandomGenerator(rg);
-
-		// Create a CorrelatedRandomVectorGenerator using "rawGenerator" for the components.
-		CorrelatedRandomVectorGenerator generator = 
-   		new CorrelatedRandomVectorGenerator(mean, covariance, 1.0e-12 * covariance.getNorm(), rawGenerator);
-		
-		return generator;
+		Email email = new SimpleEmail();
+		email.setHostName("smtp.googlemail.com");
+		email.setSmtpPort(465);
+		email.setAuthenticator(new DefaultAuthenticator("username", "password"));
+		email.setSSLOnConnect(true);
+		email.setFrom("user@gmail.com");
+		email.setSubject("TestMail");
+		email.setMsg("This is a test mail ... :-)");
+		email.addTo("foo@bar.com");
+		email.send();
 	}
 	
 	/*********** Web UI Test Utility **********/
