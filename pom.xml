@@ -71,8 +71,8 @@
 		
 	<!-- Brandon Wong - Commons Text-->
 	<dependency>
-		<groupID>org.apache.commons</groupID>
-		<artifactID>commons-text</artifactID>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-text</artifactId>
 		<version>1.4</version>
 	</dependency>
 		
@@ -88,6 +88,14 @@
  		 <groupId>com.google.guava</groupId>
   		<artifactId>guava</artifactId>
   		<version>26.0-jre</version>
+  		
+	</dependency>
+	
+	<!-- Thet Soe -->
+	<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.11.3</version>
 	</dependency>
 		
 	</dependencies>
