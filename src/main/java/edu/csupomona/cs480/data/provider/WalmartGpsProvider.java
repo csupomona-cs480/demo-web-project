@@ -38,7 +38,7 @@ public class WalmartGpsProvider implements GpsProvider {
 				nameList.add(name.text());
 			}
 
-			Elements images = doc.select("img.prod-product-card--image-src");
+			Elements images = doc.select("div.search-result-productimage img");
 			for (Element image : images) {
 				System.out.println(image.attr("src"));
 				imageList.add(image.attr("src"));
@@ -56,5 +56,5 @@ public class WalmartGpsProvider implements GpsProvider {
 		}
 		return gpsList;
 	}
-
+	
 }
