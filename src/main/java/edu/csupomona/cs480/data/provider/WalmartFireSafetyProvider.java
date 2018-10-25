@@ -37,7 +37,7 @@ public class WalmartFireSafetyProvider implements FireSafetyProvider {
 			}
 
 			List<String> imageUrlList = new ArrayList<>();
-			Elements imageTags = doc.select("img.prod-product-card--image-src");
+			Elements imageTags = doc.select("div.search-result-productimage img");
 			for (Element image : imageTags) {
 				System.out.println(image.attr("src"));
 				imageUrlList.add(image.attr("src"));
