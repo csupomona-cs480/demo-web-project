@@ -11,14 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.FireSafetyItem;
-import edu.csupomona.cs480.data.GpsItem;
 import edu.csupomona.cs480.data.User;
-import edu.csupomona.cs480.data.provider.FSUserManager;
-import edu.csupomona.cs480.data.provider.FireSafetyProvider;
-import edu.csupomona.cs480.data.provider.GpsProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
-import edu.csupomona.cs480.data.provider.WalmartGpsProvider;
 
 
 /**
@@ -41,11 +35,7 @@ public class WebController {
 	 * the {@link App} class.
 	 */
 	@Autowired
-	private UserManager userManager;	
-	@Autowired
-	private GpsProvider gpsProvider;
-	@Autowired
-	private FireSafetyProvider fireSafetyProvider;
+	private UserManager userManager;
 
 	/**
 	 * This is a simple example of how the HTTP API works.
@@ -54,12 +44,12 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
-	@RequestMapping(value = "/cs580/ping", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK-CS480-Demo";
+		return "OK";
 	}
 
 	/**
@@ -76,11 +66,6 @@ public class WebController {
 	User getUser(@PathVariable("userId") String userId) {
 		User user = userManager.getUser(userId);
 		return user;
-	}
-	
-	@RequestMapping(value = "/fall18/gps/list", method = RequestMethod.GET)
-	List<GpsItem> listGpsItems() {
-		return gpsProvider.listAllGpsItems();
 	}
 
 	/**
@@ -125,10 +110,6 @@ public class WebController {
 		userManager.deleteUser(userId);
 	}
 
-	@RequestMapping(value = "/cs580/fire/list", method = RequestMethod.GET)
-	List<FireSafetyItem> listFireSafetyItems() {
-		return fireSafetyProvider.listFireSafetyItems();
-	}
 	/**
 	 * This API lists all the users in the current database.
 	 *
@@ -138,7 +119,7 @@ public class WebController {
 	List<User> listAllUsers() {
 		return userManager.listAllUsers();
 	}
-	
+
 	/*********** Web UI Test Utility **********/
 	/**
 	 * This method provide a simple web UI for you to test the different

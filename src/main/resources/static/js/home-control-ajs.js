@@ -12,7 +12,7 @@ cs480App.controller('UserCtrl', function ($scope, $http) {
   }
 
   $scope.getUser = function() {
-	  $http.get("cs480/user/" + $scope.userIdToSearch)  
+	  $http.get("cs480/user/" + $scope.userIdToSearch)
 	  	.success(function(data){
 	  		$scope.founduser = data;
 	  	});

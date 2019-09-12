@@ -1,7 +1,7 @@
 Overview
 --------
 
-The skeleton of the demo web project for CS4800.
+The skeleton of the demo web project for CS480.
 
 This project is designed to let you practice the different aspects of software engineering, such as version control, design, tests, build, deployment, and maintenance.
 
@@ -9,8 +9,8 @@ Environment Setup
 -----------------
 
 1. Install the latests Maven (http://maven.apache.org/download.cgi)
-2. Install the latest Eclipse (http://www.eclipse.org/)
-3. Make sure your Eclipse has Maven installed (It should have been included in the latest version of the Eclipse)
+2. Install the Eclipse 4+ (http://www.eclipse.org/)
+3. Install the Maven Eclipse Plug-in using the update site (http://www.eclipse.org/m2e/download/)
 
 Importing the Project into Eclipse
 ----------------------------------
@@ -26,7 +26,7 @@ Building the Project for the First Time
 Running the Project Locally
 ----------------------------------------
 1. Locate the App.java in src/main/java source folder and right-click on it->Run As->Java Application
-2. Verify the running process in your web browser by trying the following URLs:
+2. Verify the running process in your web browser by the following URLs:
 
 - http://localhost:8080/
 - http://localhost:8080/cs480/ping
