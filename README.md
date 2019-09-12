@@ -26,7 +26,7 @@ Building the Project for the First Time
 Running the Project Locally
 ----------------------------------------
 1. Locate the App.java in src/main/java source folder and right-click on it->Run As->Java Application
-2. Verify the running process in your web browser by the following URLs:
+2. Verify the running process in your web browser by trying the following URLs:
 
 - http://localhost:8080/
 - http://localhost:8080/cs480/ping
