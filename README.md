@@ -1,7 +1,7 @@
 Overview
 --------
 
-The skeleton of the demo web project for CS480.
+The skeleton of the demo web project for CS4800.
 
 This project is designed to let you practice the different aspects of software engineering, such as version control, design, tests, build, deployment, and maintenance.
 

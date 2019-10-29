@@ -1,6 +1,7 @@
 package edu.csupomona.cs480.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
+import edu.csupomona.cs480.data.TVItem;
 import edu.csupomona.cs480.data.User;
+import edu.csupomona.cs480.data.provider.AmazonTVProductProvider2;
+import edu.csupomona.cs480.data.provider.EBayTVProductProvider;
+import edu.csupomona.cs480.data.provider.FSUserManager;
+import edu.csupomona.cs480.data.provider.TVProductProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
 
 
@@ -36,6 +42,8 @@ public class WebController {
 	 */
 	@Autowired
 	private UserManager userManager;
+	@Autowired
+	private TVProductProvider tvProductProvider;
 
 	/**
 	 * This is a simple example of how the HTTP API works.
@@ -44,12 +52,18 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
-	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs4800/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "OK";
+		return "CS4800 Software Engineering";
+	}
+	
+	@RequestMapping(value = "/cs4800/lottery", method = RequestMethod.GET)
+	String greetings() {
+		Random random = new Random();
+		return "Lottery number: " + random.nextInt(100);
 	}
 
 	/**
@@ -119,6 +133,13 @@ public class WebController {
 	List<User> listAllUsers() {
 		return userManager.listAllUsers();
 	}
+	
+	@RequestMapping(value = "/cs4800/tv/list", method = RequestMethod.GET)
+	List<TVItem> listAllTvs() {
+		return tvProductProvider.listAllTvItems();
+	}
+	
+	
 
 	/*********** Web UI Test Utility **********/
 	/**
