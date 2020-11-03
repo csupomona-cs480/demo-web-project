@@ -1,13 +1,18 @@
 package edu.csupomona.cs480;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import edu.csupomona.cs480.data.MaskProduct;
+import edu.csupomona.cs480.data.provider.EBayMaskProductProvider;
 import edu.csupomona.cs480.data.provider.EBayTVProductProvider;
 import edu.csupomona.cs480.data.provider.FSUserManager;
+import edu.csupomona.cs480.data.provider.MaskProductProvider;
 import edu.csupomona.cs480.data.provider.TVProductProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
 
@@ -26,6 +31,12 @@ public class App {
     public UserManager userManager() {
         UserManager userManager = new FSUserManager();
         return userManager;
+    }
+    
+    @Bean
+    public MaskProductProvider maskProductProvider() {
+    	MaskProductProvider maskProductProvider = new EBayMaskProductProvider();
+    	return maskProductProvider;
     }
     
     // dependency injection

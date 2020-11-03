@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
+import edu.csupomona.cs480.data.MaskProduct;
 import edu.csupomona.cs480.data.TVItem;
 import edu.csupomona.cs480.data.User;
-import edu.csupomona.cs480.data.provider.AmazonTVProductProvider2;
-import edu.csupomona.cs480.data.provider.EBayTVProductProvider;
-import edu.csupomona.cs480.data.provider.FSUserManager;
+import edu.csupomona.cs480.data.provider.EBayMaskProductProvider;
+import edu.csupomona.cs480.data.provider.MaskProductProvider;
 import edu.csupomona.cs480.data.provider.TVProductProvider;
 import edu.csupomona.cs480.data.provider.UserManager;
 
@@ -44,6 +44,8 @@ public class WebController {
 	private UserManager userManager;
 	@Autowired
 	private TVProductProvider tvProductProvider;
+	@Autowired
+	private MaskProductProvider maskProductProvider;
 
 	/**
 	 * This is a simple example of how the HTTP API works.
@@ -57,7 +59,34 @@ public class WebController {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
-		return "CS4800 Software Engineering";
+		return "CS4800 Software Engineering Fall 2020";
+	}
+	
+	
+	@RequestMapping(value = "/myteam/allison", method = RequestMethod.GET)
+	String myTeamAllison() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		String res = "sfsdfsdf";
+//		for() {
+//			res += element.toString();
+//		}
+		return res; // String
+	}
+	
+	
+	@RequestMapping(value = "/cs4800/myurl2", method = RequestMethod.GET)
+	String healthCheck2() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "CS4800 Software Engineering Fall 2020 Test 2";
+	}
+	
+	@RequestMapping(value = "/cs4800/page", method = RequestMethod.GET)
+	String demoPage2() {
+		return "<html><body><h1>Welcome</h1><img src='https://www.enr.com/ext/resources/Issues/California_Issues/2019/10-October/07-Oct/Best-Projects/CalPoly-StudentServices_014-copy.jpg?1569873682'/></body></html>";
 	}
 	
 	@RequestMapping(value = "/cs4800/lottery", method = RequestMethod.GET)
@@ -133,6 +162,12 @@ public class WebController {
 	List<User> listAllUsers() {
 		return userManager.listAllUsers();
 	}
+	
+	@RequestMapping(value = "/cs4800/mask/list", method = RequestMethod.GET)
+	List<MaskProduct> listAllMaskProducts() {
+		return maskProductProvider.listAllMaskProducts();
+	}
+	
 	
 	@RequestMapping(value = "/cs4800/tv/list", method = RequestMethod.GET)
 	List<TVItem> listAllTvs() {
