@@ -36,6 +36,6 @@ jobs:
         host: ec2-13-57-217-149.us-west-1.compute.amazonaws.com
         username: ec2-user
         port: 22
-        key: ${{ secrets.EC2TEST }}
+        key: ${{ secrets.EC2USER }}
         source: "target/cs480-1.0.jar"
         target: "~/"
