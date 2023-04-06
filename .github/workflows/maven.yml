@@ -47,4 +47,5 @@ jobs:
         username: ec2-user
         key: ${{ secrets.EC2USER }}
         script: |
-                    nohup java -jar /home/ec2-user/target/cs480-1.0.jar >/dev/null 2>&1
+                    killall java
+                    nohup java -jar /home/ec2-user/target/cs480-1.0.jar >/dev/null 2>&1 &
