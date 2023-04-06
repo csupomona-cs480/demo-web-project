@@ -36,6 +36,6 @@ jobs:
         host: ec2-13-57-217-149.us-west-1.compute.amazonaws.com
         username: ec2-user
         port: 22
-        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC89WEEkBQASuz0rtzul99eN5P5u2CdScFzCvJyP0B1e+yHCYFROXeKSum1ySMTFZylY2Fca2xaxn90jLhu2aiO4DnbEpWQ4BpxPFpOPXozSvzhsvNu/ohNXFCOFPPu5D8N+x8IfQndGZWntba69lBasHiKyVpUnIwKABKC+7qRokN9PHRFrgpSBzT9x5W73i5+rc4IkMQ2FtrdWa0Wh4e6K6Rt4WED8b7Ad2XofI2ko11DDmG4i0mU/RCLYAWbM/1wdTR48vZlGZnYM+3phmeRW8RsVisRcGQTjXFKdV39vzokyr9e3d1ou3fnomg1LSq0ggkfWBKu2/a35qKoiVYfii4byf0va4IeuckYHvDM78YNyvwiDu/NLUnVbfDX76RuCvRzCEYhu6mvw7NGxQnaMoZMjvg2PExRQslOE5y74hUbgfpHmlkMRISYhupagzdJHcEscxkfbctTgNY6SupQsaeK5ifNiqUjzyEqN9YlLZJXDNk0JCroCC+apjfPpPPJWIDsCVYqGpqroUG0x8UUSXeA8IBjcJZaJ75euVJ34u3h+4dQFk8lOXE0FNegUUKXXVP+Pc/N5p0SGZYWXxJWp+kgJci/iGKow31o1a8inOQwDRttpP97H2C5M1pEe2QlkYpsgNk93fCMi22b+jlLuAwS8zy0bq/7WtbHKp88YQ== yu.sun.cs@gmail.com
+        key: EC2TEST
         source: "target/cs480-1.0.jar"
         target: "~/"
