@@ -36,6 +36,6 @@ jobs:
         host: ec2-13-57-217-149.us-west-1.compute.amazonaws.com
         username: ec2-user
         port: 22
-        key: ec2-test-1
+        key: ec2-test-3
         source: "target/cs480-1.0.jar"
         target: "~/"
