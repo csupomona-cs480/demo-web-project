@@ -39,3 +39,12 @@ jobs:
         key: ${{ secrets.EC2USER }}
         source: "target/cs480-1.0.jar"
         target: "~/"
+        
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ec2-13-57-217-149.us-west-1.compute.amazonaws.com
+        username: ec2-user
+        key: ${{ secrets.EC2USER }}
+        script: |
+                    nohup java -jar /home/ec2-user/target/cs480-1.0.jar >/dev/null 2>&1
