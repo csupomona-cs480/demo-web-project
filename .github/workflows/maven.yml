@@ -29,3 +29,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: SCP the Jar file to the host via SSH
+      uses: appleboy/scp-action@master
+      with:
+        host: ec2-54-215-186-153.us-west-1.compute.amazonaws.com
+        username: ec2-user
+        port: 22
+        key: ${{ secrets.EC2USER }}
+        source: "target/cs480-1.0.jar"
+        target: "~/"
