@@ -39,3 +39,13 @@ jobs:
         key: ${{ secrets.EC2USER }}
         source: "target/cs480-1.0.jar"
         target: "~/"
+
+    - name: Executing remote ssh commands to run the Java Spring server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ec2-54-215-186-153.us-west-1.compute.amazonaws.com
+        username: ec2-user
+        key: ${{ secrets.EC2USER }}
+        script: |
+                    killall java
+                    nohup java -jar /home/ec2-user/target/cs480-1.0.jar >/dev/null 2>&1 &
