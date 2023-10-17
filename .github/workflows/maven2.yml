@@ -36,6 +36,16 @@ jobs:
         host: ec2-54-215-186-153.us-west-1.compute.amazonaws.com
         username: ec2-user
         port: 22
+
+    - name: NEW executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ec2-54-215-186-153.us-west-1.compute.amazonaws.com
+        username: ec2-user
+        key: ${{ secrets.EC2USER }}
+        script: |
+                    killall java
+                    nohup java -jar /home/ec2-user/target/cs480-1.0.jar >/dev/null 2>&1 &
         key: ${{ secrets.EC2USER }}
         source: "target/cs480-1.0.jar"
         target: "~/"
